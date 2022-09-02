@@ -1,0 +1,944 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{46FC53AD-67C9-498F-9E3F-430EE500AE92}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GCloudiPhone</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>GCloudiPhone</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ProvisioningType>manual</ProvisioningType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>Apple Distribution: MV Data Datenverarbeitung GmbH (DHYSM7B46R)</CodesignKey>
+    <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
+    <CodesignProvision>MySchnitzelProfile</CodesignProvision>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignProvision>MySchnitzelProfile</CodesignProvision>
+    <CodesignKey>Apple Distribution: MV Data Datenverarbeitung GmbH (DHYSM7B46R)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>Apple Development: Misa Lukic (R23A4F54J4)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <MtouchFloat32>false</MtouchFloat32>
+    <MtouchFastDev>true</MtouchFastDev>
+    <CodesignProvision>MySchnitzelProfile Development</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>Apple Distribution: MV Data Datenverarbeitung GmbH (DHYSM7B46R)</CodesignKey>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <CodesignProvision>MySchnitzelProfile</CodesignProvision>
+    <MtouchUseThumb>true</MtouchUseThumb>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>True</BuildIpa>
+    <CodesignProvision>Gustav Dist Ad-Hoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution: MV Data Datenverarbeitung GmbH (DHYSM7B46R)</CodesignKey>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\StoreLocationDto.cs" />
+    <Compile Include="InvitationCodeViewController.cs" />
+    <Compile Include="InvitationCodeViewController.designer.cs">
+      <DependentUpon>InvitationCodeViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoyaltyCardController.cs" />
+    <Compile Include="LoyaltyCardController.designer.cs">
+      <DependentUpon>LoyaltyCardController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="TabBarController.cs" />
+    <Compile Include="TabBarController.designer.cs">
+      <DependentUpon>TabBarController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TotalPointsViewController.cs" />
+    <Compile Include="TotalPointsViewController.designer.cs">
+      <DependentUpon>TotalPointsViewController.cs</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Info.plist">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <None Include="packages.config" />
+    <None Include="Icon credits.txt" />
+    <Compile Include="Coupon\CouponDetailController.cs" />
+    <Compile Include="Coupon\CouponDetailController.designer.cs">
+      <DependentUpon>CouponDetailController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coupon\CouponListItem.cs" />
+    <Compile Include="Coupon\CouponListItem.designer.cs">
+      <DependentUpon>CouponListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coupon\CouponListViewController.cs" />
+    <Compile Include="Coupon\CouponListViewController.designer.cs">
+      <DependentUpon>CouponListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coupon\CouponNavigationController.cs" />
+    <Compile Include="Coupon\CouponNavigationController.designer.cs">
+      <DependentUpon>CouponNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coupon\CouponTableSource.cs" />
+    <Compile Include="Store\StoreDetailController.cs" />
+    <Compile Include="Store\StoreDetailController.designer.cs">
+      <DependentUpon>StoreDetailController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\StoreListItem.cs" />
+    <Compile Include="Store\StoreListItem.designer.cs">
+      <DependentUpon>StoreListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\StoreListViewController.cs" />
+    <Compile Include="Store\StoreListViewController.designer.cs">
+      <DependentUpon>StoreListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\StoreTableSource.cs" />
+    <Compile Include="Cashback\CashbackTableCell.cs" />
+    <Compile Include="Cashback\CashbackTableCell.designer.cs">
+      <DependentUpon>CashbackTableCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cashback\CashbackTableViewCell.cs" />
+    <Compile Include="Cashback\CashbackTableViewCell.designer.cs">
+      <DependentUpon>CashbackTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cashback\CashbackTableViewController.cs" />
+    <Compile Include="Cashback\CashbackTableViewController.designer.cs">
+      <DependentUpon>CashbackTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cashback\CashbackViewController.cs" />
+    <Compile Include="Cashback\CashbackViewController.designer.cs">
+      <DependentUpon>CashbackViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\LoginNavigationController.cs" />
+    <Compile Include="Account\LoginNavigationController.designer.cs">
+      <DependentUpon>LoginNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\LoginViewController.cs" />
+    <Compile Include="Account\LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cashback\CashbackTableSource.cs" />
+    <Compile Include="SettingsTableViewController.cs" />
+    <Compile Include="SettingsTableViewController.designer.cs">
+      <DependentUpon>SettingsTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\NSDateExtensions.cs" />
+    <Compile Include="Shared\LoadingOverlay.cs" />
+    <Compile Include="Shared\NoElementsFoundOverlay.cs" />
+    <Compile Include="Shared\TableViewHelper.cs" />
+    <Compile Include="Shared\NotificationsHelper.cs" />
+    <Compile Include="Extensions\StoreMKPointAnnotation.cs" />
+    <Compile Include="Shared\NSObjectWrapper.cs" />
+    <Compile Include="Caching\CacheHolder.cs" />
+    <Compile Include="Location\LocationHelper.cs" />
+    <Compile Include="Shared\CustomUserNotificationCenterDelegate.cs" />
+    <Compile Include="SettingsWebView\SettingsWebViewNavigationDelegate.cs" />
+    <Compile Include="Tag\TagTableSource.cs" />
+    <Compile Include="FilterSidebarViewController.cs" />
+    <Compile Include="FilterSidebarViewController.designer.cs">
+      <DependentUpon>FilterSidebarViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilterMenuTableViewController.cs" />
+    <Compile Include="FilterMenuTableViewController.designer.cs">
+      <DependentUpon>FilterMenuTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tag\TagSearchNavigationController.cs" />
+    <Compile Include="Tag\TagSearchNavigationController.designer.cs">
+      <DependentUpon>TagSearchNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tag\TagSearchTableViewController.cs" />
+    <Compile Include="Tag\TagSearchTableViewController.designer.cs">
+      <DependentUpon>TagSearchTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tag\TagTableViewCell.cs" />
+    <Compile Include="Tag\TagTableViewCell.designer.cs">
+      <DependentUpon>TagTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\StoreMapViewController.cs" />
+    <Compile Include="Store\StoreMapViewController.designer.cs">
+      <DependentUpon>StoreMapViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\StoreMapViewDelegate.cs" />
+    <Compile Include="Account\RegisterTableViewController.cs" />
+    <Compile Include="Account\RegisterTableViewController.designer.cs">
+      <DependentUpon>RegisterTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordTableViewController.cs" />
+    <Compile Include="Account\ChangePasswordTableViewController.designer.cs">
+      <DependentUpon>ChangePasswordTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordViewController.cs" />
+    <Compile Include="Account\ChangePasswordViewController.designer.cs">
+      <DependentUpon>ChangePasswordViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUsTableViewController.cs" />
+    <Compile Include="AboutUsTableViewController.designer.cs">
+      <DependentUpon>AboutUsTableViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Resources\StoreDetailTableHeader.xib" />
+    <Compile Include="Store\StoreCouponViewController.cs" />
+    <Compile Include="Store\StoreCouponViewController.designer.cs">
+      <DependentUpon>StoreCouponViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilterMenuTableSource.cs" />
+    <Compile Include="Shared\ColoredUISearchController.cs" />
+    <Compile Include="LoyaltyCardNavigationController.cs" />
+    <Compile Include="LoyaltyCardNavigationController.designer.cs">
+      <DependentUpon>LoyaltyCardNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\ColoredUINavigationController.cs" />
+    <Compile Include="SettingsWebView\SettingsWebViewController.cs" />
+    <Compile Include="SettingsWebView\SettingsWebViewController.designer.cs">
+      <DependentUpon>SettingsWebViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\MapNavigationController.cs" />
+    <Compile Include="Store\MapNavigationController.designer.cs">
+      <DependentUpon>MapNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\StoreDetailTableHeaderView.cs" />
+    <Compile Include="Store\StoreDetailTableHeaderView.designer.cs">
+      <DependentUpon>StoreDetailTableHeaderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\StoreNavigationController.cs" />
+    <Compile Include="Store\StoreNavigationController.designer.cs">
+      <DependentUpon>StoreNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerNavigationController.cs" />
+    <Compile Include="ManagerNavigationController.designer.cs">
+      <DependentUpon>ManagerNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRootViewController.cs" />
+    <Compile Include="ManagerRootViewController.designer.cs">
+      <DependentUpon>ManagerRootViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerNavigationMenu.cs" />
+    <Compile Include="ManagerNavigationMenu.designer.cs">
+      <DependentUpon>ManagerNavigationMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerMenuTableViewController.cs" />
+    <Compile Include="ManagerMenuTableViewController.designer.cs">
+      <DependentUpon>ManagerMenuTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarNavigationDelegate.cs" />
+    <Compile Include="ManagerStoreTableViewController.cs" />
+    <Compile Include="ManagerStoreTableViewController.designer.cs">
+      <DependentUpon>ManagerStoreTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerCouponTableViewController.cs" />
+    <Compile Include="ManagerCouponTableViewController.designer.cs">
+      <DependentUpon>ManagerCouponTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\ManagerSidebarNavigationDelegate.cs" />
+    <Compile Include="Caching\CachingService.cs" />
+    <Compile Include="StartupViewController.cs" />
+    <Compile Include="StartupViewController.designer.cs">
+      <DependentUpon>StartupViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\FilterSidebarNavigationDelegate.cs" />
+    <Compile Include="Helpers\MemoryUtility.cs" />
+    <Compile Include="AboutUsNavigationController.cs" />
+    <Compile Include="AboutUsNavigationController.designer.cs">
+      <DependentUpon>AboutUsNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Shared\MemoryOptimizedUINavigationController.cs" />
+    <Compile Include="Account\ForgotPasswortViewController.cs" />
+    <Compile Include="Account\ForgotPasswortViewController.designer.cs">
+      <DependentUpon>ForgotPasswortViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EBill\InvoiceTableDataSource.cs" />
+    <Compile Include="EBill\InvoiceTableViewCell.cs" />
+    <Compile Include="EBill\InvoiceTableViewCell.designer.cs">
+      <DependentUpon>InvoiceTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EBill\InvoiceTableViewController.cs" />
+    <Compile Include="EBill\InvoiceTableViewController.designer.cs">
+      <DependentUpon>InvoiceTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EBill\ProductTableDataSource.cs" />
+    <Compile Include="IntrinsicTableView.cs" />
+    <Compile Include="IntrinsicTableView.designer.cs">
+      <DependentUpon>IntrinsicTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentTableViewCell.cs" />
+    <Compile Include="PaymentTableViewCell.designer.cs">
+      <DependentUpon>PaymentTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaxTableViewCell.cs" />
+    <Compile Include="TaxTableViewCell.designer.cs">
+      <DependentUpon>TaxTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EBill\PaymentTableDataSource.cs" />
+    <Compile Include="EBill\TaxTableDataSource.cs" />
+    <Compile Include="Extensions\UIViewExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="EBill\EBillPaymentTableViewCell.cs" />
+    <Compile Include="EBill\EBillPaymentTableViewCell.designer.cs">
+      <DependentUpon>EBillPaymentTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EBill\EBillProductTableViewCell.cs" />
+    <Compile Include="EBill\EBillProductTableViewCell.designer.cs">
+      <DependentUpon>EBillProductTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EBill\EBillTaxesTableViewCell.cs" />
+    <Compile Include="EBill\EBillTaxesTableViewCell.designer.cs">
+      <DependentUpon>EBillTaxesTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\CustomUITabBarControllerDelegate.cs" />
+    <Compile Include="EBill\InvoiceDetailsViewController.cs" />
+    <Compile Include="EBill\InvoiceDetailsViewController.designer.cs">
+      <DependentUpon>InvoiceDetailsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\UserDefaultsKeys.cs" />
+    <Compile Include="webViewSiteController.cs" />
+    <Compile Include="webViewSiteController.designer.cs">
+      <DependentUpon>webViewSiteController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard">
+      <SubType>Designer</SubType>
+    </InterfaceDefinition>
+    <ImageAsset Include="Images.xcassets\PointsIcon.imageset\medal_sticker.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\PointsIconSmall.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\PointsIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Points.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Points.imageset\medal.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\PointsIconSmall.imageset\medal_sticker (3).png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\ShareIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\ShareIcon.imageset\ShareIcon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\No_image_available.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\No_image_available.imageset\No_image_available.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Logo.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogoutIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoyaltyCardIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\StoreIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Cashback-In.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Cashback-Out.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Cashback-In.imageset\icons8-in.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Cashback-Out.imageset\icons8-out.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CashbackIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SettingsIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FocusOnUserIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NavigationIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddIcon.imageset\icons8-plus-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CashbackIcon.imageset\icons8-euro-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogoutIcon.imageset\icons8-exit-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SettingsIcon.imageset\icons8-settings-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NavigationIcon.imageset\icons8-route-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FocusOnUserIcon.imageset\icons8-center-of-gravity-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddIcon.imageset\icons8-plus-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CashbackIcon.imageset\icons8-euro-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogoutIcon.imageset\icons8-exit-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SettingsIcon.imageset\icons8-settings-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NavigationIconFilled.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NavigationIconFilled.imageset\icons8-route-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NavigationIconFilled.imageset\icons8-route-filled-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoyaltyCardIconFilled.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\StoreIconFilled.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\StoreIconFilled.imageset\icons8-shop-filled-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\StoreIconFilled.imageset\icons8-shop-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\StoreIcon.imageset\icons8-shop-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\StoreIcon.imageset\icons8-shop-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\StoreIconFilledTall.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MapsIconFilledTall.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SettingsIconFilledTall.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MapsIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MapsIconFilled.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MapsIconFilled.imageset\icons8-marker-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MapsIcon.imageset\icons8-marker-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MapsIcon.imageset\icons8-marker-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MapsIconFilled.imageset\icons8-marker-filled-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoyaltyCardIcon.imageset\icons8-qr-code-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoyaltyCardIconFilled.imageset\icons8-qr-code-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoyaltyCardIconFilled.imageset\icons8-qr-code-filled-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoginIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoginIcon.imageset\icons8-enter-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoginIcon.imageset\icons8-enter-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FollowIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FollowIconFilled.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ArrowLeftIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ArrowRightIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FocusOnUserIcon.imageset\icons8-center-of-gravity-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ArrowRightIcon.imageset\icons8-forward-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ArrowLeftIcon.imageset\icons8-back-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ArrowLeftIcon.imageset\icons8-back-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ArrowRightIcon.imageset\icons8-forward-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseIcon.imageset\icons8-cancel-filled-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseIcon.imageset\icons8-cancel-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FollowIconFilled.imageset\icons8-christmas-star-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FollowIcon.imageset\icons8-christmas-star-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FollowIcon.imageset\icons8-christmas-start-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FollowIconFilled.imageset\icons8-christmas-start-filled-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FilterIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FilterIcon.imageset\icons8-slider-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FilterIcon.imageset\icons8-slider-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NotificationIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NotificationIcon.imageset\icons8-notification-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NotificationIcon.imageset\icons8-notification-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NotificationIconFilled.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NotificationIconFilled.imageset\icons8-notification-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NotificationIconFilled.imageset\icons8-notification-filled-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoyaltyCardIcon.imageset\icons8-qr-code-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AboutUsIconTall.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddIcon.imageset\ios\README.md">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddIcon.imageset\ios\iTunesArtwork%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddIcon.imageset\ios\iTunesArtwork%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddIcon.imageset\ios\iTunesArtwork%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\NavigationIcon.imageset\icons8-route-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SettingsIconFilledTall.imageset\icons8_settings_filled2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\StoreIconFilledTall.imageset\icons8_shop2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AboutUsIconTall.imageset\icons8_about_filled2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SettingsIconFilled.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SettingsIconFilled.imageset\icons8-settings-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SettingsIconFilled.imageset\icons8-settings-filled-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Dashboard-Image-2.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Dashboard-Image-3.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Dashboard-Image-4.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Dashboard-Image-1.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Dashboard-Image-5.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\E-BillIconColored.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\E-BillIconColored.imageset\icons8-euro-96.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ReportIconColored.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ReportIconColored.imageset\icons8-graph-96.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MenuIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MenuIcon.imageset\icons8-menu-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MenuIcon.imageset\icons8-menu-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\eBillIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\eBillIconFilled.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\eBillIconFilled.imageset\InvoiceIconFilled-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\eBillIconFilled.imageset\InvoiceIconFilled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\eBillIcon.imageset\InvoiceIcon-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\eBill-Sticker.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\eBill-Sticker.imageset\e-Bill-Icon-sticker-small.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\eBillIcon.imageset\InvoiceIcon-75.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Logo.imageset\passIconTwo.png" />
+    <ImageAsset Include="Resources\Images.xcassets\MapsIconFilledTall.imageset\icons8_marker3.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Dashboard-Image-1.imageset\Dashboard-Image-1.jpg" />
+    <ImageAsset Include="Resources\Images.xcassets\Dashboard-Image-2.imageset\Dashboard-Image-2.jpg" />
+    <ImageAsset Include="Resources\Images.xcassets\Dashboard-Image-3.imageset\Dashboard-Image-3.jpg" />
+    <ImageAsset Include="Resources\Images.xcassets\Dashboard-Image-4.imageset\Dashboard-Image-4.jpg" />
+    <ImageAsset Include="Resources\Images.xcassets\Dashboard-Image-5.imageset\Dashboard-Image-5.jpg" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-20x20%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-20x20%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-60x60%402x-1.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-20x20%401x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-20x20%402x-1.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-76x76%401x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-76x76%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-83.5x83.5%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\ItunesArtwork%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GCloud.Shared\GCloud.Shared.csproj">
+      <Project>{cf2b8811-5be0-4419-96d0-bff1f52da3ed}</Project>
+      <Name>GCloud.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="OpenTK-1.0" />
+    <Reference Include="System" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Essentials.1.6.1\lib\xamarinios10\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="ZXing.Net.Mobile.Core">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.4.1\lib\Xamarin.iOS10\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.4.1\lib\Xamarin.iOS10\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.4.1\lib\Xamarin.iOS10\ZXingNetMobile.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.12\lib\Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3">
+      <HintPath>..\packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.1.12\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.12\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.12\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Optional">
+      <HintPath>..\packages\Optional.4.0.0\lib\netstandard2.0\Optional.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.2.0\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.2.0\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\packages\System.Memory.4.5.2\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="SidebarNavigation">
+      <HintPath>..\packages\SidebarNavigation.2.0.0\lib\xamarinios10\SidebarNavigation.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.5.231\lib\netstandard1.1\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Core">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Core.5.2.0\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.InstanceID">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.InstanceID.3.4.0\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Analytics.5.5.0\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.CloudMessaging">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.CloudMessaging.3.1.2\lib\Xamarin.iOS10\Firebase.CloudMessaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive">
+      <HintPath>..\packages\System.Reactive.4.1.4\lib\netstandard2.0\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="Refit">
+      <HintPath>..\packages\Refit.4.6.99\lib\netstandard2.0\Refit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images.xcassets\.imageset\" />
+    <Folder Include="Resources\Images.xcassets\AboutUsIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\AboutUsIconTall.imageset\" />
+    <Folder Include="Resources\Images.xcassets\AppIcon-old.appiconset\" />
+    <Folder Include="Resources\Images.xcassets\ArrowLefticon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ArrowRightIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\CloseIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\CouponImageSEt.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Dashboard-Image-1.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Dashboard-Image-2.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Dashboard-Image-3.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Dashboard-Image-4.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Dashboard-Image-5.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Dashboard-Image-6.imageset\" />
+    <Folder Include="Resources\Images.xcassets\E-BillIconColored.imageset\" />
+    <Folder Include="Resources\Images.xcassets\eBill-Sticker.imageset\" />
+    <Folder Include="Resources\Images.xcassets\eBillIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\eBillIconFilled.imageset\" />
+    <Folder Include="Resources\Images.xcassets\FilterIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\FollowIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\FollowIconFilled.imageset\" />
+    <Folder Include="Resources\Images.xcassets\MenuIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\MoreIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\MoreIconFilled.imageset\" />
+    <Folder Include="Resources\Images.xcassets\NotificationIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\NotificationIconFilled.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ProfileIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ProfileIconFilled.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ProfileIconTall.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ReportIconColored.imageset\" />
+    <Folder Include="Resources\Images.xcassets\SettingsIconFilled.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="GoogleService-Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <Import Project="..\GCloudShared\GCloudShared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.InstanceID.3.4.0\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.InstanceID.3.4.0\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.Analytics.5.5.0\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Analytics.5.5.0\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\packages\Refit.4.6.99\build\netstandard1.4\refit.targets" Condition="Exists('..\packages\Refit.4.6.99\build\netstandard1.4\refit.targets')" />
+</Project>

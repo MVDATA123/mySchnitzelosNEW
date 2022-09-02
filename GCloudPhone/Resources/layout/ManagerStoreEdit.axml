@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainRootEditStore"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/appBar" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayoutEditStoreName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarStoreEdit">
+
+        <ImageView
+            android:id="@+id/imageViewEditStoreName"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/icons8_user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/register_txt_fields"
+            android:paddingTop="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewEditStoreName">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/txtEditStoreName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:hint="Bezeichnung"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:theme="@style/RegisterTxtFields" />
+        </android.support.design.widget.TextInputLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayoutEditStoreStreet"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutEditStoreName">
+
+        <ImageView
+            android:id="@+id/imageViewEditStoreStreet"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/icons8_user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/register_txt_fields"
+            android:paddingTop="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewEditStoreStreet">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/txtEditStoreStreet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:hint="Straße"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:theme="@style/RegisterTxtFields" />
+        </android.support.design.widget.TextInputLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayoutEditStoreHouseNr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutEditStoreStreet"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutEditStoreName">
+
+        <ImageView
+            android:id="@+id/imageViewEditStoreHouseNr"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/icons8_user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/register_txt_fields"
+            android:paddingTop="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewEditStoreHouseNr">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/txtEditStoreHouseNr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:hint="Hausnummer"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:theme="@style/RegisterTxtFields" />
+        </android.support.design.widget.TextInputLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayoutEditStorePostCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayoutEditStoreCity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutEditStoreStreet">
+
+        <ImageView
+            android:id="@+id/imageViewEditStorePostCode"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/icons8_user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/register_txt_fields"
+            android:paddingTop="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewEditStorePostCode">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/txtEditStorePostCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:hint="PLZ"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:theme="@style/RegisterTxtFields" />
+        </android.support.design.widget.TextInputLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayoutEditStoreCity"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutEditStoreStreet">
+
+        <ImageView
+            android:id="@+id/imageViewEditStoreCity"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/icons8_user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/register_txt_fields"
+            android:paddingTop="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewEditStoreCity">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/txtEditStoreCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:hint="Stadt"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:theme="@style/RegisterTxtFields" />
+        </android.support.design.widget.TextInputLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnEditStoreSave"
+		style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Speichern"
+		android:theme="@style/Widget.AppCompat.Button.Borderless.Colored"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBarStoreEdit"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+		android:indeterminateOnly="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+		android:layout_marginBottom="-7dp"
+        android:layout_marginTop="-6dp"/>
+</android.support.constraint.ConstraintLayout>

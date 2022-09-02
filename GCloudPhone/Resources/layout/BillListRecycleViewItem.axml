@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="72dp">
+
+
+    <TextView
+        android:id="@+id/txtBillCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtBillAmountLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="Betrag:"
+        app:layout_constraintStart_toStartOf="@+id/txtBillCompany"
+        app:layout_constraintTop_toBottomOf="@+id/txtBillCompany" />
+
+    <TextView
+        android:id="@+id/txtBillAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="10€"
+        app:layout_constraintStart_toStartOf="@+id/txtBillInvoiceDate"
+        app:layout_constraintTop_toBottomOf="@+id/txtBillCompany" />
+
+    <TextView
+        android:id="@+id/txtBillInvoiceDateLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="Datum:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtBillInvoiceDate"
+        app:layout_constraintStart_toStartOf="@+id/txtBillAmountLable" />
+
+    <TextView
+        android:id="@+id/txtBillInvoiceDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="10dp"
+        android:singleLine="true"
+        android:text="20.11.2017"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtBillAmountLable" />
+
+    <TextView
+        android:id="@+id/txtInvoiceNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

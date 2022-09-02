@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>811723077173-av4ht7bbmi9d6n1q28fluicdtehsp2ek.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.811723077173-av4ht7bbmi9d6n1q28fluicdtehsp2ek</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAgeR0ttExyQqyGgL0l6XLzgYGBkrQPniw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>811723077173</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>at.mv-data.gustav.GCloudiPhone</string>
+	<key>PROJECT_ID</key>
+	<string>agile-planet-205010</string>
+	<key>STORAGE_BUCKET</key>
+	<string>agile-planet-205010.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:811723077173:ios:4bed7fbb15b97022</string>
+	<key>DATABASE_URL</key>
+	<string>https://agile-planet-205010.firebaseio.com</string>
+</dict>
+</plist>

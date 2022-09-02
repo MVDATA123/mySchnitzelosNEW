@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainRootStoresList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCDCDC">
+    <include
+        layout="@layout/appBar" />
+    <ProgressBar
+        android:id="@+id/progressBarStoresList"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_bar"
+        android:indeterminate="true" 
+		android:layout_marginBottom="-7dp"
+        android:layout_marginTop="-6dp"/>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeLayoutStoresList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/progressBarStoresList">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewStoresList"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <TextView
+        android:id="@+id/txtStoresListEmpty"
+        android:visibility="gone"
+        android:layout_below="@id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/storesListEmptyListText"
+        android:textAlignment="center" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:background="@color/secondaryColor"
+        android:src="@drawable/baseline_camera_white_24"
+        app:backgroundTint="@color/secondaryColor" />
+</RelativeLayout>

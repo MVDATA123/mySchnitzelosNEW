@@ -1,0 +1,5 @@
+﻿@model dynamic
+@{
+    Layout = null;
+}
+Bitte klicken Sie <a  href="@Url.Action("ConfirmEmail","Users",new { userId = Model.userId, code = Model.code }, Request.Url.Scheme)">hier</a> um Ihren Account zu aktivieren.

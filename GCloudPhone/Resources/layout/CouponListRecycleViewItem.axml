@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:orientation="horizontal">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageViewCouponListRecycleViewItem"
+        android:scaleType="centerCrop"
+        android:layout_margin="16dp" />
+    <TextView
+        android:id="@+id/txtCouponListRecycleViewItemRedeemsLeft"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:singleLine="true"
+        android:text="4"
+        android:textAlignment="center" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@id/imageViewCouponListRecycleViewItem"
+        android:layout_toStartOf="@id/txtCouponListRecycleViewItemRedeemsLeft">
+        <TextView
+            android:id="@+id/txtCouponListRecycleViewItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/txtCouponListRecycleViewItemLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtCouponListRecycleViewItem"
+            android:layout_gravity="left"
+            android:singleLine="true"
+            android:text="Wert:" />
+        <TextView
+            android:id="@+id/txtCouponListRecycleViewItemValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtCouponListRecycleViewItemLabel"
+            android:layout_gravity="left"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@+id/txtCouponListRecycleViewItemLabel"
+            android:singleLine="true"
+            android:text="10€" />
+        <TextView
+            android:id="@+id/txtCouponListRecycleViewItemValidToLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtCouponListRecycleViewItemLabel"
+            android:singleLine="true"
+            android:text="Gültig bis:" />
+        <TextView
+            android:id="@+id/txtCouponListRecycleViewItemValidToValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/txtCouponListRecycleViewItemValidToLabel"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/txtCouponListRecycleViewItemValidToLabel"
+            android:singleLine="true"
+            android:text="20.11.2017" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/appBar" />
+    <ImageView
+        android:layout_gravity="center"
+        android:paddingTop="30px"
+        android:paddingLeft="30px"
+        android:paddingRight="30px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/send_email_filled" />
+  <TextView
+        android:layout_gravity="center"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:text="Es wird eine Bestätigungsemail verschickt, bitte folgen Sie den Anweisungen in der Email" />
+  <Button
+        android:layout_gravity="center"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:id="@+id/backToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zurück zum Login" />
+</LinearLayout>

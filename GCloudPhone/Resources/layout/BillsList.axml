@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bills_list_main_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:minHeight="25px"
+    android:minWidth="25px">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/bills_list_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:theme="@style/DesignTheme">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/bills_list_collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?android:attr/colorPrimary"
+            app:expandedTitleTextAppearance="@style/ExpandedAppBar"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/bills_list_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:theme="@style/ExpandedAppBar"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="exitUntilCollapsed" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_scrollFlags="scroll">
+		
+        <TextView
+            android:id="@+id/bills_list_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:singleLine="true"
+            android:text="Rechnungen"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/bills_list_swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="567dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/bills_list_header"
+			>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/bills_list_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+				android:layout_marginTop="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:scrollbars="vertical" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+		        
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="8dp"
+        android:clickable="false"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        app:backgroundTint="@android:color/white"
+        app:borderWidth="3dp"
+        app:elevation="0dp"
+        app:layout_anchor="@+id/bills_list_app_bar_layout"
+        app:layout_anchorGravity="left|bottom"
+        app:rippleColor="@android:color/transparent"
+        app:srcCompat="@drawable/icon" />
+</android.support.design.widget.CoordinatorLayout>

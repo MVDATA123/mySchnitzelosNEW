@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainRootCouponsList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:minHeight="25px"
+    android:minWidth="25px">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayoutCouponsList"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:theme="@style/DesignTheme">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_collapse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?android:attr/colorPrimary"
+            app:expandedTitleTextAppearance="@style/ExpandedAppBar"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/storeBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@drawable/nav_header_background"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/app_bar_couponsList"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:theme="@style/ExpandedAppBar"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="exitUntilCollapsed" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_scrollFlags="scroll">
+
+        <Button
+            android:id="@+id/btnCouponsListFollowStore"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="top|right"
+            android:layout_margin="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/follow_button_style"
+            android:text="@string/couponsListFollowStore"
+            android:textAllCaps="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnCouponsListEnableNotifications"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/icons8_bell"
+            android:scaleType="fitCenter"
+            android:textAllCaps="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintEnd_toStartOf="@+id/btnCouponsListFollowStore"
+            app:layout_constraintTop_toTopOf="@+id/btnCouponsListFollowStore" />
+
+        <TextView
+            android:id="@+id/txtCouponsListHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:singleLine="true"
+            android:text="Simmering"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCouponsListEnableNotifications" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeLayoutCouponsList"
+            android:layout_width="match_parent"
+            android:layout_height="567dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCouponsListHeader">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewCouponsList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:scrollbars="vertical" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <ImageView
+            android:id="@+id/imageViewIconSmall"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnCouponsListEnableNotifications"
+            app:srcCompat="@drawable/icon" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="8dp"
+        android:clickable="false"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        app:backgroundTint="@android:color/white"
+        app:borderWidth="3dp"
+        app:elevation="0dp"
+        app:layout_anchor="@+id/appBarLayoutCouponsList"
+        app:layout_anchorGravity="left|bottom"
+        app:rippleColor="@android:color/transparent"
+        app:srcCompat="@drawable/icon" />
+</android.support.design.widget.CoordinatorLayout>

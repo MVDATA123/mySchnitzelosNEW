@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainRootMaps"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include layout="@layout/fragment_bottom_layout"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabMapNavigate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        app:backgroundTint="@color/secondaryColor"
+        app:elevation="0dp"
+        app:layout_anchor="@id/floatingActionLine"
+        app:layout_anchorGravity="end"
+        app:srcCompat="@drawable/icons8_route" />
+</android.support.design.widget.CoordinatorLayout>

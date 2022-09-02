@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF2B8811-5BE0-4419-96D0-BFF1F52DA3ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GCloud.Shared</RootNamespace>
+    <AssemblyName>GCloud.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dto\Api\BillApiBindingModels.cs" />
+    <Compile Include="Dto\Api\HomeApiBindingModels.cs" />
+    <Compile Include="Dto\Api\RedeemApiBindingModels.cs" />
+    <Compile Include="Dto\Api\StoreConfigApiBindingModels.cs" />
+    <Compile Include="Dto\Api\StoreCouponApiBindingModel.cs" />
+    <Compile Include="Dto\Api\StoreDtoModels.cs" />
+    <Compile Include="Dto\Api\UserCouponDto.cs" />
+    <Compile Include="Dto\Domain\CashbackDto.cs" />
+    <Compile Include="Dto\Domain\CompanyDto.cs" />
+    <Compile Include="Dto\Domain\CountryDto.cs" />
+    <Compile Include="Dto\Domain\CouponDto.cs" />
+    <Compile Include="Dto\Domain\CouponImageDto.cs" />
+    <Compile Include="Dto\Domain\CouponScopeDto.cs" />
+    <Compile Include="Dto\Domain\CouponTypeDto.cs" />
+    <Compile Include="Dto\Domain\CouponUsageAction\AbstractUsageActionDto.cs" />
+    <Compile Include="Dto\Domain\CouponUsageAction\AbstractUsageActionVisitor.cs" />
+    <Compile Include="Dto\Domain\CouponUsageAction\ArticleDiscountUsageActionDto.cs" />
+    <Compile Include="Dto\Domain\CouponUsageAction\Coupling.cs" />
+    <Compile Include="Dto\Domain\CouponUsageAction\InvoiceDiscountUsageActionDto.cs" />
+    <Compile Include="Dto\Domain\CouponUsageAction\OrderArticleUsageActionDto.cs" />
+    <Compile Include="Dto\Domain\CouponUsageRequirement\AbstractUsageRequirementDto.cs" />
+    <Compile Include="Dto\Domain\CouponUsageRequirement\AbstractUsageRequirementVisitor.cs" />
+    <Compile Include="Dto\Domain\CouponUsageRequirement\MinimumTurnoverRequirementDto.cs" />
+    <Compile Include="Dto\Domain\CouponUsageRequirement\ProductRequiredUsageRequirement.cs" />
+    <Compile Include="Dto\Domain\NotificationDto.cs" />
+    <Compile Include="Dto\Domain\Bill_In_Dto.cs" />
+    <Compile Include="Dto\Domain\Bill_Out_Dto.cs" />
+    <Compile Include="Dto\Domain\StoreDto.cs" />
+    <Compile Include="Dto\Domain\TagDto.cs" />
+    <Compile Include="Dto\Domain\UserDto.cs" />
+    <Compile Include="Dto\Invoice.cs" />
+    <Compile Include="Exceptions\BaseGustavException.cs" />
+    <Compile Include="Exceptions\Cashback\BaseCashbackException.cs" />
+    <Compile Include="Exceptions\Cashback\CashbackNotFoundException.cs" />
+    <Compile Include="Exceptions\Cashback\NoLastCashbackException.cs" />
+    <Compile Include="Exceptions\Cashier\BaseCashierException.cs" />
+    <Compile Include="Exceptions\Cashier\CashRegisterNotInStoreException.cs" />
+    <Compile Include="Exceptions\Coupon\AlreadyRedeemedException.cs" />
+    <Compile Include="Exceptions\Coupon\BaseCouponException.cs" />
+    <Compile Include="Exceptions\Coupon\CouponNotFoundException.cs" />
+    <Compile Include="Exceptions\ExceptionHandlerResult.cs" />
+    <Compile Include="Exceptions\ExceptionStatusCode.cs" />
+    <Compile Include="Exceptions\General\GustavArgumentException.cs" />
+    <Compile Include="Exceptions\General\GustavArgumentNullException.cs" />
+    <Compile Include="Exceptions\Home\CredentialsWrongException.cs" />
+    <Compile Include="Exceptions\Home\OldPasswordInvalidException.cs" />
+    <Compile Include="Exceptions\Home\SendMailException.cs" />
+    <Compile Include="Exceptions\Home\RegistrationException.cs" />
+    <Compile Include="Exceptions\Home\UsernameAlreadyTakenException.cs" />
+    <Compile Include="Exceptions\IGustavException.cs" />
+    <Compile Include="Exceptions\Store\ApiTokenInvalidException.cs" />
+    <Compile Include="Exceptions\Store\BaseStoreException.cs" />
+    <Compile Include="Exceptions\Store\StoreNotFoundException.cs" />
+    <Compile Include="Exceptions\User\BaseUserException.cs" />
+    <Compile Include="Exceptions\User\EmailNotConfirmedException.cs" />
+    <Compile Include="Exceptions\User\UserDisabledException.cs" />
+    <Compile Include="Exceptions\User\UserNotFoundException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseUrlContainer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

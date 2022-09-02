@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>0f85410f-ad15-4438-a7f7-138d27ab63f6</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GCloudShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\BasePersistable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Bill.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\MobilePhone.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\Subscription.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\UserLoginMethod.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ApiExceptionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\EnumerableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\JsonExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repository\AbstractRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repository\MobilePhoneRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repository\SubscriptionRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repository\UserRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Dto\ChangePasswordRequestModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Dto\ImageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Dto\LoginRequestModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Dto\LoginResponseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Dto\RegisterRequestModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\IAuthService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\ICashbackService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\IBillService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\IStartupService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\IStoreService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\IUserCouponService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\IUserStoreService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared\AsyncHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared\AuthState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared\DbBootstraper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared\HttpClientContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared\IInternetState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared\MyHttpClientHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared\NetworkState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared\UriContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\ContentEqualsAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\HasContentAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\MinLengthAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\StoreWhitelist.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repository\StoreWhitelistRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\LogMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Domain\LogLevel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repository\LogRepository.cs" />
+  </ItemGroup>
+</Project>

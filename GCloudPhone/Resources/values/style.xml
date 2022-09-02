@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="DesignTheme" parent="Theme.AppCompat.Light.DarkActionBar" >
+    <item name="colorPrimary">@color/primaryColor</item>
+    <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+    <item name="colorAccent">@color/accent</item>
+    <item name="android:statusBarColor">@color/primaryDarkColor</item>
+    <item name="android:textColorPrimary">@color/primaryTextColor</item>
+    <item name="android:textColorSecondary">@color/secondaryTextColor</item>
+    <item name="android:navigationBarColor">@color/primaryColor</item>
+    <item name="android:colorAccent">#78909c</item>
+    <item name="android:windowBackground">@android:color/background_light</item>
+    <item name="windowNoTitle" >true </item >
+    <item name="windowActionBar" >false </item >
+    <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+  </style >
+
+  <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+    <item name="spinBars">true</item>
+    <item name="color">@android:color/white</item>
+  </style>
+
+  <style name="DesignThemeAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <item name="android:colorAccent">#000000</item>
+  </style>
+
+  <style name="DashboardButton"></style>
+  <style name="DashboardButton.Image">
+    <item name="android:layout_marginTop">30dp</item>
+    <item name="android:layout_marginBottom">50dp</item>
+    <item name="android:layout_marginStart">20dp</item>
+    <item name="android:layout_marginEnd">20dp</item>
+  </style>
+  <style name="DashboardButton.Text">
+    <item name="android:layout_marginEnd">8dp</item>
+    <item name="android:layout_marginStart">8dp</item>
+    <item name="android:textSize">20dp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="ExpandedAppBar">
+    <item name="android:textColor">@android:color/black</item>
+  </style>
+  <style name="RegisterTxtFields">
+    <!-- Used for the bottom line when not selected / focused -->
+    <item name="colorControlNormal">#E8E8E8</item>
+    <!-- colorControlActivated & colorControlHighlight use the colorAccent color by default -->
+  </style>
+
+  <style name="Datepicker" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorPrimary">@color/primaryColor</item>
+    <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+    <item name="colorAccent">@color/accent</item>
+  </style>
+</resources>

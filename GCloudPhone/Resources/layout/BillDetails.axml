@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout4"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff5f5f5">
+
+    <include
+        android:id="@+id/billDetailsAppBar"
+        layout="@layout/appBarBillDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/billDetailsProgressBar"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/billDetailsAppBar" />
+
+    <ScrollView
+        android:id="@+id/billDetailsScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/billDetailsProgressBar"
+        android:visibility="gone"
+        tools:visibility="visible" >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/invoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="20dp"
+            android:background="#ffffffff"
+            android:isScrollContainer="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/billDetailsStoreName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Filialname" />
+
+            <TextView
+                android:id="@+id/billDetailsCompanyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billDetailsStoreName"
+                tools:text="Firmenname" />
+
+            <TextView
+                android:id="@+id/billDetailsStoreAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                tools:layout_editor_absoluteX="87dp"
+                tools:layout_editor_absoluteY="67dp"
+                tools:text="Straße 1, 1010 Wien"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billDetailsCompanyName" />
+
+            <!--<TextView
+                android:id="@+id/billDetailsStorePhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/billDetailsStoreAddress"
+                tools:text="Tel: 01/123456" />-->
+
+            <TextView
+                android:id="@+id/billDetailsCompanyAtu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/billDetailsStoreAddress"
+                tools:text="ATU 12345678" />
+
+            <TextView
+                android:id="@+id/billSeperator1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/bill_separator"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billDetailsCompanyAtu" />
+
+
+            <TextView
+                android:id="@+id/billDetailsTerminalId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/kassen_id"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator1" />
+
+            <TextView
+                android:id="@+id/billDetailsInvoiceNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="32dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/invoiceNo"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toStartOf="@+id/billDetailsDate"
+                app:layout_constraintStart_toEndOf="@+id/billDetailsTerminalId"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator1" />
+
+            <TextView
+                android:id="@+id/billDetailsDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="32dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/invoiceDate"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toStartOf="@+id/billDetailsTime"
+                app:layout_constraintStart_toEndOf="@+id/billDetailsInvoiceNo"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator1" />
+
+            <TextView
+                android:id="@+id/billDetailsTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/invoiceTime"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator1" />
+
+            <TextView
+                android:id="@+id/billDetailsTerminalIdTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="32dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toStartOf="@+id/billDetailsInvoiceNoTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billDetailsTerminalId"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/billDetailsInvoiceNoTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toStartOf="@+id/billDetailsDateTxt"
+                app:layout_constraintStart_toEndOf="@+id/billDetailsTerminalIdTxt"
+                app:layout_constraintTop_toBottomOf="@id/billDetailsTerminalId"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/billDetailsDateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toStartOf="@+id/billDetailsTimeTxt"
+                app:layout_constraintStart_toEndOf="@+id/billDetailsInvoiceNoTxt"
+                app:layout_constraintTop_toBottomOf="@id/billDetailsTerminalId"
+                tools:text="25.10.2018" />
+
+            <TextView
+                android:id="@+id/billDetailsTimeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billDetailsTerminalId"
+                tools:text="09:41" />
+
+            <TextView
+                android:id="@+id/billSeperator2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/bill_separator"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billDetailsTerminalIdTxt" />
+
+            <TextView
+                android:id="@+id/billDetailsProductLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/BillDetailsProduct"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator2" />
+
+            <TextView
+                android:id="@+id/billDetailsTaxLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/billDetailsBillItemTax"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toStartOf="@+id/billDetailsAmountLabel"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator2" />
+
+            <TextView
+                android:id="@+id/billDetailsAmountLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/billDetailsAmount"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toStartOf="@+id/billDetailsSinglePriceLabel"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator2" />
+
+            <TextView
+                android:id="@+id/billDetailsSinglePriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/billDetailsSinglePrice"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toStartOf="@+id/billDetailsTotalPriceLabel"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator2" />
+
+            <TextView
+                android:id="@+id/billDetailsTotalPriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/billDetailsBillIItemTotal"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator2" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/billItemsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/billDetailsProductLabel"
+                tools:listitem="@layout/bill_details_bill_item_row" />
+
+            <TextView
+                android:id="@+id/billSeperator4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/bill_separator"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billItemsRecyclerView" />
+
+            <TextView
+                android:id="@+id/billDetailsSumLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/invoiceSumLabel"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator4" />
+
+            <TextView
+                android:id="@+id/billDetailsSum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator4"
+                tools:text="33,50" />
+
+            <TextView
+                android:id="@+id/billSeperator5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/billSeperatorDoubleLine"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billDetailsSumLabel" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/billPaymentsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/billSeperator5"
+                tools:listitem="@layout/bill_payments_row" />
+
+            <TextView
+                android:id="@+id/billSeperator6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/bill_separator"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billPaymentsRecyclerView" />
+
+            <TextView
+                android:id="@+id/billDetailsTaxRateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/billTaxLabel"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator6" />
+
+            <TextView
+                android:id="@+id/billDetailsNetLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/billTaxNetLabel"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toStartOf="@+id/billDetailsTaxAmountLabel"
+                app:layout_constraintStart_toEndOf="@+id/billDetailsTaxRateLabel"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator6" />
+
+            <TextView
+                android:id="@+id/billDetailsTaxAmountLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/billDetailsBillItemTax"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toStartOf="@+id/billDetailsGrossLabel"
+                app:layout_constraintStart_toEndOf="@+id/billDetailsNetLabel"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator6" />
+
+            <TextView
+                android:id="@+id/billDetailsGrossLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/billTaxGrossLabel"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator6" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/billTaxesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/billDetailsTaxAmountLabel"
+                tools:listitem="@layout/bill_tax_row" />
+
+            <TextView
+                android:id="@+id/billSeperator7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="none"
+                android:singleLine="true"
+                android:text="@string/bill_separator"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billTaxesRecyclerView" />
+
+            <ImageView
+                android:id="@+id/billDetailsQrCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:contentDescription="TODO"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/billSeperator7"
+                android:maxWidth="300dp"
+                android:maxHeight="300dp" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

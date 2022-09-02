@@ -1,0 +1,27 @@
+﻿@model dynamic
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>FoodJet installieren</title>
+</head>
+<body>
+<div>
+      
+</div>
+</body>
+</html>
+
+@section Scripts {
+    <script>
+        $(document).ready(function (){
+            if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+                window.location.href = 'https://play.google.com/store/apps/details?id=mvdata.foodjet';
+            }
+            if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
+                window.location.href = 'https://www.foodjet.online';
+            }
+        });
+    </script>
+}

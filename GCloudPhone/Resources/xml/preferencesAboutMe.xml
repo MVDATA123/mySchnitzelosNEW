@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <Preference
+    android:title="@string/agbs">
+    <intent
+      android:action="android.intent.action.VIEW"
+      android:targetClass="mvdata.foodjet.Settings.WebviewActivity"
+      android:data="AGB"
+      android:targetPackage="mvdata.foodjet" />
+  </Preference>
+  
+  <Preference
+    android:title="@string/impressum">
+    <intent
+      android:action="android.intent.action.VIEW"
+      android:targetClass="mvdata.foodjet.Settings.WebviewActivity"
+      android:data="Impressum"
+      android:targetPackage="mvdata.foodjet" />
+  </Preference>
+  <Preference
+    android:title="@string/datenschutzhinweise">
+    <intent
+      android:action="android.intent.action.VIEW"
+      android:targetClass="mvdata.foodjet.Settings.WebviewActivity"
+      android:data="Datenschutzhinweise"
+      android:targetPackage="mvdata.foodjet" />
+  </Preference>
+
+</PreferenceScreen>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--For all properties see: http://developer.android.com/guide/topics/resources/menu-resource.html-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:checkableBehavior="single">
+    <!--<item android:id="@+id/DashbardMenuCoupons"
+          android:title="@string/dashboardMenuCoupons"
+          android:icon="@drawable/baseline_pricetag_black_24"/>-->
+    <item android:id="@+id/DashbardMenuStores"
+          android:title="@string/dashboardMenuStores"
+          android:icon="@drawable/baseline_store_black_24"/>
+    <item android:id="@+id/DashbardMenuReports"
+          android:title="@string/dashboardMenuReports"
+          android:icon="@drawable/baseline_papersheet_black_24"/>
+    <item android:id="@+id/DashboardMenuLogout"
+          android:title="@string/dashboardMenuLogoff"
+          android:icon="@drawable/ic_exit_to_app_white_24dp"/>
+    <item android:id="@+id/DashboardMenuEbill"
+          android:title="eBill"
+          android:icon="@drawable/icons8_euro"/>
+  </group>
+</menu>

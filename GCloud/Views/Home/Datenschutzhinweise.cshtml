@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Datenschutzhinweise";
+    bool showNavBars = Request.Params.Get("fullscreen") == null ? true : false;
+}
+@if (!showNavBars)
+{
+    <style>
+        body {
+            padding-top: 0;
+        }
+        div.navbar.navbar-default {
+            display: none;
+        }
+    </style>
+}
+<style>
+    .question {
+        font-weight: bold;
+    }
+</style>
+<h2>Datenschutzhinweise</h2>
+<p>
+    Die nachfolgenden Datenschutzhinweise geben einen Überblick über die Erhebung und Verarbeitung
+    Ihrer Daten.<br />
+    Mit den folgenden Informationen möchten wir Ihnen einen Überblick über die Verarbeitung ihrer
+    personen- und unternehmensbezogenen Daten durch uns und ihre Rechte auf dem Datenschutzrecht
+    geben.
+</p>
+<div class="question">
+    1. Wer ist für die Datenverarbeitung verantwortlich und an wen kann ich mich wenden?
+</div>
+<p>
+    MV-DATA Datenverarbeitung GmbH<br />
+    Steingasse 7/1.2<br />
+    A-1030 Wien<br />
+    Tel.: 01 280 93 14<br />
+    Fax: 01 285 04 14<br />
+</p>
+<div class="question">
+    2. Welche Daten nutzen wir?
+</div>
+<p>
+    Wir verarbeiten personen- und unternehmensbezogene Daten, die wir im Rahmen unserer
+    Geschäftsbeziehung von unseren Kunden erhalten.<br /><br />
+    Relevante personenbezogene Daten sind:
+    <ul>
+        <li>Personalien (Name, Adresse)</li>
+        <li>Kontaktdaten (Telefon, E-Mailadresse)</li>
+    </ul>
+</p>
+<div class="question">
+    3. Rechtsgrundlage der Datenverarbeitung?
+</div>
+<p>
+    Wir verarbeiten personenbezogene Daten im Einklang mit den Bestimmungen der Europäischen
+    Datenschutz- Grundverordung (DSGVO) und dem Datenschutzgesetz (DSG).
+</p>
+<div class="question">
+    4. Wer bekommt meine Daten?
+</div>
+<p>
+    Innerhalb unseres Unternehmens erhalten diejenigen Stellen Zugriff auf ihre Daten, die diese zur
+    Erfüllung unserer vertraglichen und gesetzlichen Pflichten brauchen.<br /><br />
+    Informationen über Sie dürfen wir nur weitergeben, wenn gesetzliche Bestimmungen dies
+    erlauben, oder Sie eingewilligt haben.
+</p>
+<div class="question">
+    5. Werden Daten in ein Drittland oder an eine internationale Organisation übermittelt?
+</div>
+<p>
+    Keine personen- oder unternehmensbezogenen Daten werden von uns an ein Drittland oder
+    internationale Organisation übermittelt.
+</p>
+<div class="question">
+    6. Wie lange werden meine Daten gespeichert?
+</div>
+<p>
+    Wir verarbeiten und speichern Ihre personenbezogenen Daten, solange es für die Erfüllung
+    unserer vertraglichen und gesetzlichen Pflichten erforderlich ist. Dabei ist zu beachten, dass
+    unsere Geschäftsbeziehungen ein Dauerschuldverhältnis sind, welche auf mehrere Jahre
+    angelegt sind.<br /><br />
+    Jede Person hat uns gegenüber das Recht:
+    <ul>
+        <li>auf Auskunft nach Art.15 DSGVO</li>
+        <li>auf Berichtigung nach Art. 16 DSGVO</li>
+        <li>auf Löschung nach Art. 17 DSGVO</li>
+        <li>auf Einschränkung der Verarbeitung nach Art. 18 DSGVO</li>
+        <li>auf Widerspruch aus Art. 21 DSGVO</li>
+        <li>sowie das Recht auf Datenübertragbarkeit aus Art. 20 DSGVO</li>
+    </ul>
+    Darüber hinaus besteht ein Beschwerderecht bei der österreichischen Datenschutzbehörde nach
+    Maßgabe des Art. 77 DSGVO i. V.m. §24 DSG.
+</p>
+<div class="question">
+    7. Gibt es für mich eine Pflicht zur Bereitstellung von Daten?
+</div>
+<p>
+    Im Rahmen unserer Geschäftsbeziehung müssen Sie diejenigen personen- und
+    unternehmensbezogenen Daten bereitstellen, die für die Aufnahme und Durchführung einer
+    Geschäftsbeziehung und der Erfüllung der damit verbundenen vertraglichen Pflichten
+    erforderlich sind oder zu deren Erhebung wir gesetzlich verpflichtet sind. Ohne diese Daten
+    werden wir nicht in der Lage sein, den Vertrag mit Ihnen abzuschließen oder diesen
+    durchzuführen.
+</p>
+<div class="question">
+    8. Findet Profiling statt?
+</div>
+<p>
+    Nein, ihre personen- und unternehmensbezogenen Daten werden ausschließlich für die
+    aufrechte Geschäftsbeziehung verwendet und gespeichert.
+</p><br />
+<h4>Informationen über ihr Widerspruchsrecht nach Art. 21 DSGVO</h4>
+<p>
+    Sie haben das Recht, aus Gründen, die sich aus ihrer Situation ergeben, jederzeit gegen die
+    Verarbeitung Sie betreffender personen- und unternehmensbezogenen Daten Widerspruch
+    einzulegen.<br />
+    Legen Sie Widerspruch ein, werden wir Ihre personen- und unternehmensbezogenen Daten nicht
+    mehr verarbeiten.<br />
+    Der Widerspruch kann formfrei erfolgen (oder Sie nehmen unsere Vorlage, welche sich auf
+    unserer Homepage befindet) und sollte möglichst gerichtet werden an:<br /><br />
+    MV-Data Datenverarbeitung GmbH<br />
+    Steingasse 7/1.2<br />
+    A-1030 Wien
+</p>

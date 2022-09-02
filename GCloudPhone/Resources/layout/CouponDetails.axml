@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <include
+        layout="@layout/appBarCouponDetails" />
+    <ProgressBar
+        android:id="@+id/progressBarCouponDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_below="@id/app_bar"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal" 
+		android:layout_marginBottom="-7dp"
+        android:layout_marginTop="-6dp"/>
+    <TextView
+        android:id="@+id/txtCouponDetailsDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Gutscheinname"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_below="@id/progressBarCouponDetails" />
+    <ImageView
+        android:id="@+id/imageViewCouponDetails"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/txtCouponDetailsDescription"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="false"
+        android:layout_centerVertical="false"
+        android:layout_margin="10dp" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/imageViewCouponDetails"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp">
+        <TextView
+            android:id="@+id/txtCouponDetailsValidFromPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Gültig ab:" />
+        <TextView
+            android:id="@+id/txtCouponDetailsValidToPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/txtCouponDetailsValidFromPanel"
+            android:layout_below="@+id/txtCouponDetailsValidFromPanel"
+            android:text="Gültig bis:" />
+        <TextView
+            android:id="@+id/txtCouponDetailsRedeemsLeftPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtCouponDetailsValidToPanel"
+            android:layout_margin="5dp"
+            android:text="Einlösbar:" />
+        <TextView
+            android:id="@+id/txtCouponDetailsAmountPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/txtCouponDetailsRedeemsLeftPanel"
+            android:layout_below="@+id/txtCouponDetailsRedeemsLeftPanel"
+            android:text="Wert:" />
+        <TextView
+            android:id="@+id/txtCouponDetailsValidFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtCouponDetailsValidFromPanel"
+            android:layout_alignBottom="@+id/txtCouponDetailsValidFromPanel"
+            android:layout_marginStart="51dp"
+            android:layout_toEndOf="@+id/txtCouponDetailsValidToPanel"
+            android:text="20.04.2018" />
+        <TextView
+            android:id="@+id/txtCouponDetailsValidTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/txtCouponDetailsValidFrom"
+            android:layout_alignTop="@+id/txtCouponDetailsValidToPanel"
+            android:text="30.04.2018" />
+        <TextView
+            android:id="@+id/txtCouponDetailsRedeemsLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtCouponDetailsRedeemsLeftPanel"
+            android:layout_alignBottom="@+id/txtCouponDetailsRedeemsLeftPanel"
+            android:layout_alignStart="@+id/txtCouponDetailsValidTo"
+            android:text="5" />
+        <TextView
+            android:id="@+id/txtCouponDetailsAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtCouponDetailsAmountPanel"
+            android:layout_alignBottom="@+id/txtCouponDetailsAmountPanel"
+            android:layout_alignStart="@+id/txtCouponDetailsRedeemsLeft"
+            android:text="5,00€" />
+    </RelativeLayout>
+</RelativeLayout>

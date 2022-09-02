@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp">
+    <ImageView
+        android:id="@+id/cashbackImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_in" />
+    <TextView
+        android:id="@+id/txtCashbackRecycleViewItemChange"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="+0,99"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="textEnd" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/cashbackImage"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toLeftOf="@id/txtCashbackRecycleViewItemChange">
+        <TextView
+            android:id="@+id/txtCashbackRecycleViewItemDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="20.03.2018"
+            android:textAlignment="textEnd"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/txtCashbackRecycleViewItemTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="09:51"
+            android:textAlignment="textEnd" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "811723077173",
+    "firebase_url": "https://agile-planet-205010.firebaseio.com",
+    "project_id": "agile-planet-205010",
+    "storage_bucket": "agile-planet-205010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811723077173:android:4e227c5b16981445",
+        "android_client_info": {
+          "package_name": "mvdata.foodjet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811723077173-fhkl5ldg2u0jqlmpq8s7mq878f24a5u2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdwjRBp4VIVT_pdrTUepxGxP8LY4tURNg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

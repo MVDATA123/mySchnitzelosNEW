@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:id="@+id/iconContainerRecycleViewItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/bg_circle" />
+        <ImageView
+            android:id="@+id/imgStoreRecycleViewItemStoreIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/baseline_store_white_24" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layoutStoreRecycleViewItemDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentEnd="true">
+        <ImageButton
+            android:id="@+id/buttonStoreRecycleViewItemLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/baseline_location_on_black_24" />
+        <TextView
+            android:id="@+id/txtStoreRecycleViewItemDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonStoreRecycleViewItemLocation"
+            android:text="150m" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/iconContainerRecycleViewItem"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toStartOf="@id/layoutStoreRecycleViewItemDistance">
+        <TextView
+            android:id="@+id/txtStoreRecycleViewItemCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Firma" />
+        <TextView
+            android:id="@+id/txtStoreRecycleViewItemStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Filiale" />
+        <TextView
+            android:id="@+id/txtStoreRecycleViewItemAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Adresse" />
+    </LinearLayout>
+</RelativeLayout>

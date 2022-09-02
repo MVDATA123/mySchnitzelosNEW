@@ -1,0 +1,103 @@
+﻿{
+  'InvoiceNumber': '6',
+  'InvoiceDate': '2018-10-24T15:06:01',
+  'Delivery': null,
+  'Biller': {
+    'VATIdentificationNumber': 'ATU46004700',
+    'Address': {
+      'Salutation': null,
+      'Name': 'Zentrale',
+      'Street': 'Steingasse 7',
+      'Town': 'Wien',
+      'ZIP': 1030,
+      'Country': {
+        'CountryCode': null,
+        'Value': 'Austria'
+      },
+      'Email': null,
+      'Contact': null
+    },
+    'InvoiceRecipientsBillerID': 0,
+    'ComanyName': 'MV-Data Datenverarbeitung Ges.m.b.H'
+  },
+  'InvoiceRecipient': null,
+  'Details': {
+    'HeaderDescription': null,
+    'ItemList': {
+      'HeaderDescription': null,
+      'ListLineItem': [
+        {
+          'Description': 'VOLLKORNLAIB 1 kg',
+          'Quantity': {
+            'Unit': null,
+            'Value': 1
+          },
+          'UnitPrice': 4.52,
+          'VATRate': 10,
+          'InvoiceRecipientsOrderReference': null,
+          'LineItemAmount': 4.52
+        },
+        {
+          'Description': 'VOLLKORNKASTEN 1kg',
+          'Quantity': {
+            'Unit': null,
+            'Value': 1
+          },
+          'UnitPrice': 4.54,
+          'VATRate': 10,
+          'InvoiceRecipientsOrderReference': null,
+          'LineItemAmount': 4.54
+        },
+        {
+          'Description': 'VOLLKORNLAIB 0,5 kg',
+          'Quantity': {
+            'Unit': null,
+            'Value': 1
+          },
+          'UnitPrice': 2.31,
+          'VATRate': 10,
+          'InvoiceRecipientsOrderReference': null,
+          'LineItemAmount': 2.31
+        },
+        {
+          'Description': 'VOLLKORNLAIB AKTION',
+          'Quantity': {
+            'Unit': null,
+            'Value': 1
+          },
+          'UnitPrice': 4.18,
+          'VATRate': 10,
+          'InvoiceRecipientsOrderReference': null,
+          'LineItemAmount': 4.18
+        }
+      ],
+      'FooterDescription': null
+    },
+    'FooterDescription': null
+  },
+  'Tax': {
+    'VAT': [
+      {
+        'TaxedAmount': 0.0,
+        'VATRate': 10.00,
+        'Amount': 1.4136363636363636363636363636
+      }
+    ]
+  },
+  'TotalGrossAmount': 15.5500,
+  'PayableAmount': 15.5500,
+  'PaymentMethods': [
+    {
+      'Comment': 'BAR                 ',
+      'Amount': 15.55,
+      'UniversalBankTransaction': null
+    }
+  ],
+  'PaymentConditions': null,
+  'Comment': null,
+  'Language': null,
+  'InvoiceCurrency': '€',
+  'DocumentType': null,
+  'GeneratingSystem': null,
+  'JwsSignature': 'eyJhbGciOiJFUzI1NiJ9.X1IxLUFUMl8xXzZfMjAxOC0xMC0yNFQxNTowNjowMF8wLDAwXzE1LDU1XzAsMDBfMCwwMF8wLDAwX3pPWERhdG89XzAxQzI3RUU2MjYxMDNDREJENkJBNDczNDU3Xy9VZGRuSW5QeDZnPQ.-wgyLowJar93f3a9LygaKhWFOiYUZHNpPXZco2ZKudcNWQWxFKMog5_P1ZbZ1EMQvdNT1qZOzIzOaj3b09x-kA'
+}

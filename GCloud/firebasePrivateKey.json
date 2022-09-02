@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "agile-planet-205010",
+  "private_key_id": "c6447289f79bee2a1b5e18a38f2d1c416ec2f63b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDIQWv9TIor8x3Q\n/p0tqbcz9fBoHQwpvhJyRVX4orzi4XZm2PIomIKwjN/y6odrcSlNl1Pbgicew5gE\nyc/LXX44s5+GIcLa7Wrq3zjJ9/L/3OJVIIqKscPjfxFNFVmr7+PGcnXEN/T5PZ/q\nz//PIPtJySIGf5E54zgB28TOllCcearyJC9fde4mky2iF32FvziWU/ciEfDTrngD\nnYiVSotItmcig8/FLdwb5qqMGb2wqA1JQxCErWw/KKOEF/FiitByvvn6X/W990e4\nWZRcRVA0+8LxN0kqsbg2w3EDX3PvI/5lh8iMDgdodX1C7nvn9D+VNFsUV2SHSwcd\nOXPy4A37AgMBAAECggEAK8ID51sAvD7JDqB8VvyFUEDW8eEbBcoHPNoCwaxJyufK\nWAnizFUbBZoa23k88xDMnixJgicsBjBmOPGiSsVYreouGwCok+8aFE2HmrZn7lnl\nSQWt0EWs0Lq03JukNwpZwsTDEAfMK2Q4W/ZsZuXFkyd0nGfmo3gPhnRvylaVMcOO\n6wrDOtMik2u0WrdSWeKyHPR6t5fVI48tLjKih7qwroHn3OKGNG2cgiL/+lawbAKM\nBfvdjIk8er7rw7V0aa20AuqKcVkhqHPQr3KROdfyPu9SshtYqdVdZM5XVjsOyMsF\nk7sl0V8U04YEIPvPRNIiUomWwV9KuOzQy4XYcB9rtQKBgQD3kK+2WbXutFLJul7U\n+vGyQhr7SQfkHJNFKZ5dznMPf7IMtN9+okH9jBwffYq6QW3ahaFd5riHo7E1Uocb\nAlgsNo5MpgxFYMNM5u06DR4yzKKN+IEcwtaB17BAh/SGLJ1jK7t614shI5qC1dAH\nT9dCQDg3zgTvnjarWvv1duJktwKBgQDPFBdgTDixTqeKoIQlIOkk1kNpYCqm9t2w\nuyCcIkRaU2yMbrm0XFEq48icSKLldgVdIYDCfjrOvqPoK+CL4dO0hLkWBBiSQjN8\nVltrr8yBoljyBDbhFHiTLI1GMRkgMSqwF4+Dg1EsLEvCFqthTZsYuX84gPJ3n7Io\ntyLr4UXE3QKBgQC6hV9t0x94zpHFfU5vxvYNKTMs+nQgkMsAg//Wi3IzTjF201vE\nDDoN7t9NdofsFtnOl3nhxrBnOZSNKTWzystl3GDQLRb3upTKvv4jC7kh6v3aW03j\nvoRhZYFczVIVOU4HZu6k+frQKAQE6VUH/UagmsQAf49GffyQlEdbRIwD9wKBgDMM\nZObcY21yUmMeRvVQM6ldGKk1h845NVWIC/XxjKAnyK6l7SnFSE0mciH01hNzEMdw\npulLbPvii02E44oYVbQ+s9H1mIkVwNN6Bnd5kxSyDPM8jrrV7RN6/Ci9mdARztAy\nPrLRAIW/Nb3XENCf7QgfUnl/cEaFG8pluzojAqwRAoGBAJbTm27KQlNBU40WX15V\nydh3TzSKH8GYRi28ns2GE4bmVs8L6UaAVy11WpBy+FSMnRUalaoiRgIaZ11AoV7h\n6/nMSNROo88ELHGfyRWJ+y5jJPgVxqKE/GMBck9TZ5hm7hVs3ax+fksZzdfjJ/a4\nCeCBRVIBqRCQfN+oR7E14Kh3\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-1ht7z@agile-planet-205010.iam.gserviceaccount.com",
+  "client_id": "108932346600398995590",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1ht7z%40agile-planet-205010.iam.gserviceaccount.com"
+}
