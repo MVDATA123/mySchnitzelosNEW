@@ -32,6 +32,13 @@ namespace GCloudiPhone
             base.ViewDidLoad();
 
             Delegate = new CustomUITabBarControllerDelegate();
+
+
+            //UITabBar.Appearance.SelectedImageTintColor = new UIColor(90 / 255f, 36 / 255f, 191 / 255f, 1.0f);
+            //UITabBar.Appearance.TintColor = new UIColor(90 / 255f, 36 / 255f, 191 / 255f, 1.0f);
+            //UITabBar.Appearance.BarTintColor = new UIColor(245 / 255f, 246 / 255f, 247 / 255f, 1.0f);
+
+           // TabBarController.MoreNavigationController.NavigationBar.TopItem.Title = @"new title";
         }
 
         public async void Logout(UIViewController sender)

@@ -5,11 +5,12 @@ using WebKit;
 
 namespace GCloudiPhone
 {
-    public partial class webViewSiteController : UIViewController
+    public partial class WebViewOurProducts : UIViewController
     {
-        private readonly NSUrl url = new NSUrl("https://myschnitzel.at/apppart/speisekarte-produkte/");
 
-        public webViewSiteController (IntPtr handle) : base (handle)
+        private readonly NSUrl url = new NSUrl("https://myschnitzel.at/apppart/speisekarten");
+
+        public WebViewOurProducts (IntPtr handle) : base (handle)
         {
         }
 

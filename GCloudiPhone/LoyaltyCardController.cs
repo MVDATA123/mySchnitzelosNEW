@@ -6,6 +6,7 @@ using GCloudiPhone.Caching;
 using GCloudiPhone.Helpers;
 using GCloudShared.Repository;
 using GCloudShared.Shared;
+using SafariServices;
 using SidebarNavigation;
 using StoreKit;
 using UIKit;
@@ -21,7 +22,8 @@ namespace GCloudiPhone
         private Random random;
         private Timer timer;
 
-        //private readonly NSUrl url = new NSUrl("https://www.b92.net");
+        private readonly NSUrl urlOurProducts = new NSUrl("https://myschnitzel.at/apppart/speisekarte-produkte/");
+        private readonly NSUrl urlOurMenu = new NSUrl("https://myschnitzel.at/apppart/speisekarten/");
 
 
         protected SidebarController SidebarController
@@ -180,12 +182,24 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).ChangeSelectedItem(3);
         }
 
-        //partial void UIButton321446_TouchUpInside(UIButton sender)
-        //{
-        //    var webView = new WKWebView(View.Frame, new WKWebViewConfiguration());
-        //    View.AddSubview(webView);
+        partial void OpenOurProducts(UIButton sender)
+        {
+            // Ako koristimo Safari, gde je back button automatski implementiran:
+            // UIApplication.SharedApplication.OpenUrl(urlOurProducts);
 
-        //    webView.LoadRequest(new NSUrlRequest(url));
-        //}
+            TabBarController.TabBar.Hidden = false;
+            // Automatski nas prebacuje na webViewSiteController
+            ((TabBarController)TabBarController).ChangeSelectedItem(5);
+        }
+
+        partial void OpenOurMenu(UIButton sender)
+        {
+            // Ako koristimo Safari, gde je back button automatski implementiran:
+            // UIApplication.SharedApplication.OpenUrl(urlOurMenu);
+
+            TabBarController.TabBar.Hidden = false;
+            // Automatski nas prebacuje na webViewOurProducts
+            ((TabBarController)TabBarController).ChangeSelectedItem(6);
+        }
     }
 }

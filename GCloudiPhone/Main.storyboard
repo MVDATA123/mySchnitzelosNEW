@@ -169,6 +169,22 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="329439" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="245" y="272" width="99" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Produkte" image="AddIcon"/>
+                                <connections>
+                                    <action selector="OpenOurProducts:" destination="9pv-A4-QxB" id="342942" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="340757" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="59" y="497" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Speisekarte"/>
+                                <connections>
+                                    <action selector="OpenOurMenu:" destination="9pv-A4-QxB" id="342943" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hvg-5B-IRm"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3177,7 +3193,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="327149"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="323678" translatesAutoresizingMaskIntoConstraints="NO"/>
+                    <tabBarItem key="tabBarItem" title="Produkte" id="323678" translatesAutoresizingMaskIntoConstraints="NO" image="eBillIcon"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="323679" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3186,14 +3202,14 @@
         </scene>
         <scene sceneID="328292">
             <objects>
-                <viewController id="328293" sceneMemberID="viewController">
+                <viewController id="328293" sceneMemberID="viewController" customClass="WebViewOurProducts">
                     <view key="view" contentMode="scaleToFill" id="328294">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="328298"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="328295" translatesAutoresizingMaskIntoConstraints="NO"/>
+                    <tabBarItem key="tabBarItem" title="Speisekarte" id="328295" translatesAutoresizingMaskIntoConstraints="NO" image="eBillIcon"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="328296" userLabel="First Responder" sceneMemberID="firstResponder"/>

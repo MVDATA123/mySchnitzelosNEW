@@ -62,6 +62,14 @@ namespace GCloudiPhone
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void MapButton_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("OpenOurMenu:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void OpenOurMenu (UIKit.UIButton sender);
+
+        [Action ("OpenOurProducts:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void OpenOurProducts (UIKit.UIButton sender);
+
         [Action ("ProfileButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void ProfileButton_TouchUpInside (UIKit.UIButton sender);

@@ -366,6 +366,10 @@
     <Compile Include="webViewSiteController.designer.cs">
       <DependentUpon>webViewSiteController.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebViewOurProducts.cs" />
+    <Compile Include="WebViewOurProducts.designer.cs">
+      <DependentUpon>WebViewOurProducts.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard">
