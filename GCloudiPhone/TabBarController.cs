@@ -38,7 +38,19 @@ namespace GCloudiPhone
             //UITabBar.Appearance.TintColor = new UIColor(90 / 255f, 36 / 255f, 191 / 255f, 1.0f);
             //UITabBar.Appearance.BarTintColor = new UIColor(245 / 255f, 246 / 255f, 247 / 255f, 1.0f);
 
-           // TabBarController.MoreNavigationController.NavigationBar.TopItem.Title = @"new title";
+            // TabBarController.MoreNavigationController.NavigationBar.TopItem.Title = @"new title";
+
+            //Promena ikonice na tab bar-u, ne mora da se radi na ovaj nacin jer se
+            //ikonice mogu dodati i pomocu storyboarda
+            //TabBar.Items[1].Image = GetTabIcon(UITabBarSystemItem.Bookmarks);
+        }
+
+        private UIImage GetTabIcon(UITabBarSystemItem systemItem)
+        {
+            //Convert UITabBarItem to UIImage
+            UITabBarItem item = new UITabBarItem(systemItem, 0);
+
+            return UIImage.FromImage(item.SelectedImage.CGImage, item.SelectedImage.CurrentScale, item.SelectedImage.Orientation);
         }
 
         public async void Logout(UIViewController sender)

@@ -3193,7 +3193,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="327149"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Produkte" id="323678" translatesAutoresizingMaskIntoConstraints="NO" image="eBillIcon"/>
+                    <tabBarItem key="tabBarItem" title="Produkte" id="323678" translatesAutoresizingMaskIntoConstraints="NO" image="eBillIcon" selectedImage="eBillIconFilled"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="323679" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3209,7 +3209,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="328298"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Speisekarte" id="328295" translatesAutoresizingMaskIntoConstraints="NO" image="eBillIcon"/>
+                    <tabBarItem key="tabBarItem" title="Speisekarte" id="328295" translatesAutoresizingMaskIntoConstraints="NO" image="eBillIcon" selectedImage="eBillIconFilled"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="328296" userLabel="First Responder" sceneMemberID="firstResponder"/>

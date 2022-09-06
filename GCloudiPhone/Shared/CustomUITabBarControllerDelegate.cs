@@ -13,9 +13,10 @@ namespace GCloudiPhone
                 return false;
             }
 
-            if(fromView != toView) {
-                UIView.Transition(fromView, toView, 0.3, UIViewAnimationOptions.TransitionCrossDissolve, null);
-            }
+            //Zakomentarisano jer se pojavljivala greska kada se klikne na "More" tabu kada se klikne na njega
+            //if(fromView != toView) {
+            //    UIView.Transition(fromView, toView, 0.3, UIViewAnimationOptions.TransitionCrossDissolve, null);
+            //}
 
             return true;
         }
