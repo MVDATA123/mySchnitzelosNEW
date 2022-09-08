@@ -108,10 +108,15 @@ namespace GCloudiPhone
 
             couponsTableController = new UITableViewController { TableView = StoreInfoCouponsTable };
 
-            NavigationItem.RightBarButtonItem = new UIBarButtonItem(UIImage.FromBundle("FilterIcon"), UIBarButtonItemStyle.Plain, (sender, e) => SidebarController.ToggleMenu());
+            // NavigationItem.RightBarButtonItem = new UIBarButtonItem(UIImage.FromBundle("FilterIcon"), UIBarButtonItemStyle.Plain, (sender, e) => SidebarController.ToggleMenu());
 
             FindSegmentControl.RemoveFromSuperview();
-            NavigationItem.TitleView = FindSegmentControl;
+            //StoreMapView.Add(storeListBlurEffectView);
+            StoreMapView.Add(StoreTableView);
+            
+            
+
+            //NavigationItem.TitleView = FindSegmentControl;
 
             storeInfoCenter = StoreInfoView.Center;
             StoreInfoView.Center = new CGPoint(storeInfoCenter.X, storeInfoCenter.Y + 300);
@@ -163,7 +168,7 @@ namespace GCloudiPhone
             View.SendSubviewToBack(focusOnUserBtnBlurEffectView);
             View.SendSubviewToBack(StoreMapView);
 
-            StoreTableView.BackgroundColor = UIColor.Clear;
+            StoreTableView.BackgroundColor = UIColor.FromRGB(255, 206, 51);
             storeListBlurEffectView = new UIVisualEffectView(blurEffect)
             {
                 Frame = StoreMapView.Frame,
@@ -174,7 +179,7 @@ namespace GCloudiPhone
             locationManager.RequestWhenInUseAuthorization();
             FilterMenuController.StoreMapViewController = this;
 
-            StoreTableView.RemoveFromSuperview();
+            //StoreTableView.RemoveFromSuperview();
             StoreInfoView.RemoveFromSuperview();
         }
 
@@ -354,10 +359,19 @@ namespace GCloudiPhone
             switch (FindSegmentControl.SelectedSegment)
             {
                 case 0:
-                    storeListBlurEffectView.RemoveFromSuperview();
-                    StoreTableView.RemoveFromSuperview();
-                    FocusOnUserBtn.Hidden = false;
-                    focusOnUserBtnBlurEffectView.Hidden = false;
+                    //storeListBlurEffectView.RemoveFromSuperview();
+                    //StoreTableView.RemoveFromSuperview();
+                    //FocusOnUserBtn.Hidden = false;
+                    //focusOnUserBtnBlurEffectView.Hidden = false;
+                    //break;
+                    StoreMapView.Add(storeListBlurEffectView);
+                    StoreMapView.Add(StoreTableView);
+                    FocusOnUserBtn.Hidden = true;
+                    focusOnUserBtnBlurEffectView.Hidden = true;
+                    if (isStoreInfoShown)
+                    {
+                        CloseStoreInfo();
+                    }
                     break;
                 case 1:
                     StoreMapView.Add(storeListBlurEffectView);

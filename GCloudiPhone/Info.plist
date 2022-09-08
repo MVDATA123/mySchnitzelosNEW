@@ -66,5 +66,9 @@
 	<string>mySchnitzel Punktepass</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>CFBundleDevelopmentRegion</key>
+    	<string>de</string>
+    	<key>CFBundleLocalizations</key>
+        <string>de</string>
 </dict>
 </plist>

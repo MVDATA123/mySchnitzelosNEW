@@ -29,7 +29,8 @@ namespace GCloudiPhone
         {
             Store = store;
             StoreName.Text = store.Name;
-            CompanyName.Text = store.Company.Name;
+            //CompanyName.Text = store.Company.Name;
+            //CompanyName.Hidden = true;
             AddressLabel.Text = store.Address;
             if (showDistance)
             {
