@@ -88,5 +88,15 @@ namespace GCloudiPhone
             await Caching.CachingService.UnfollowStore(storeId.ToString());
             NotificationsHelper.Instance.UnsubscribeStore(storeId);
         }
+
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            //base.RowSelected(tableView, indexPath);
+            //var selectedName = names[indexPath.Row];
+            var item = TableItems[indexPath.Row];
+            var name = item.Name;
+
+
+        }
     }
 }

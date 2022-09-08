@@ -44,6 +44,7 @@ namespace GCloudiPhone
             tableViewRef = new WeakReference<UITableView>(StoreList);
             StoreList.Source = tableSource;
             //StoreList.RowHeight = 75;
+   
 
             search = new ColoredUISearchController(searchResultsController: null)
             {
