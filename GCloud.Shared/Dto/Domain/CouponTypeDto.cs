@@ -4,6 +4,7 @@
     {
         Percent = 1,
         Value = 2,
-        Points = 3
+        Points = 3,
+        SpecialProductPoints = 4
     }
 }

@@ -370,6 +370,14 @@
     <Compile Include="WebViewOurProducts.designer.cs">
       <DependentUpon>WebViewOurProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActionController.cs" />
+    <Compile Include="ActionController.designer.cs">
+      <DependentUpon>ActionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialProductsController.cs" />
+    <Compile Include="SpecialProductsController.designer.cs">
+      <DependentUpon>SpecialProductsController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard">

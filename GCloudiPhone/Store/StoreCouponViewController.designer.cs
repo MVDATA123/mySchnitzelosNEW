@@ -16,39 +16,17 @@ namespace GCloudiPhone
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem CashbackButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView CouponsTable { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem NavigateButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView StoreImage { get; set; }
 
-        [Action ("NavigateButton_Activated:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void NavigateButton_Activated (UIKit.UIBarButtonItem sender);
-
         void ReleaseDesignerOutlets ()
         {
-            if (CashbackButton != null) {
-                CashbackButton.Dispose ();
-                CashbackButton = null;
-            }
-
             if (CouponsTable != null) {
                 CouponsTable.Dispose ();
                 CouponsTable = null;
-            }
-
-            if (NavigateButton != null) {
-                NavigateButton.Dispose ();
-                NavigateButton = null;
             }
 
             if (StoreImage != null) {

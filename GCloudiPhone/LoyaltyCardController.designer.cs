@@ -16,6 +16,10 @@ namespace GCloudiPhone
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Aktionen { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView BackgroundImage { get; set; }
 
         [Outlet]
@@ -52,6 +56,10 @@ namespace GCloudiPhone
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SpecialProducts { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton StoreButton { get; set; }
 
         [Action ("EBillButton_TouchUpInside:")]
@@ -62,6 +70,10 @@ namespace GCloudiPhone
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void MapButton_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("OpenAktionenTab:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void OpenAktionenTab (UIKit.UIButton sender);
+
         [Action ("OpenOurMenu:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void OpenOurMenu (UIKit.UIButton sender);
@@ -69,6 +81,10 @@ namespace GCloudiPhone
         [Action ("OpenOurProducts:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void OpenOurProducts (UIKit.UIButton sender);
+
+        [Action ("OpenSpecialProductsTab:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void OpenSpecialProductsTab (UIKit.UIButton sender);
 
         [Action ("ProfileButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -80,6 +96,11 @@ namespace GCloudiPhone
 
         void ReleaseDesignerOutlets ()
         {
+            if (Aktionen != null) {
+                Aktionen.Dispose ();
+                Aktionen = null;
+            }
+
             if (BackgroundImage != null) {
                 BackgroundImage.Dispose ();
                 BackgroundImage = null;
@@ -123,6 +144,11 @@ namespace GCloudiPhone
             if (ShadowView != null) {
                 ShadowView.Dispose ();
                 ShadowView = null;
+            }
+
+            if (SpecialProducts != null) {
+                SpecialProducts.Dispose ();
+                SpecialProducts = null;
             }
 
             if (StoreButton != null) {

@@ -185,6 +185,22 @@
                                     <action selector="OpenOurMenu:" destination="9pv-A4-QxB" id="342943" eventType="touchUpInside"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="364837" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="24" y="287" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Aktionen"/>
+                                <connections>
+                                    <action selector="OpenAktionenTab:" destination="9pv-A4-QxB" id="364838" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="366634" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="110" y="302" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SpecialProducts"/>
+                                <connections>
+                                    <action selector="OpenSpecialProductsTab:" destination="9pv-A4-QxB" id="366635" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hvg-5B-IRm"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -201,6 +217,8 @@
                         <outlet property="ShadowView" destination="276192" id="name-outlet-276192"/>
                         <outlet property="StoreButton" destination="78313" id="name-outlet-78313"/>
                         <outlet property="eBillButton" destination="78314" id="name-outlet-78314"/>
+                        <outlet property="Aktionen" destination="364837" id="name-outlet-364837"/>
+                        <outlet property="SpecialProducts" destination="366634" id="name-outlet-366634"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -339,6 +357,8 @@
                         <segue destination="41638" kind="relationship" relationship="viewControllers" id="283770"/>
                         <segue id="323680" destination="323676" kind="relationship" relationship="viewControllers"/>
                         <segue id="328297" destination="328293" kind="relationship" relationship="viewControllers"/>
+                        <segue id="358632" destination="358628" kind="relationship" relationship="viewControllers"/>
+                        <segue id="366646" destination="366642" kind="relationship" relationship="viewControllers"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -2151,24 +2171,9 @@
                         <viewLayoutGuide key="safeArea" id="rJs-Uv-HdA"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="216401">
-                        <rightBarButtonItems>
-                            <barButtonItem image="CashbackIcon" id="216402">
-                                <connections>
-                                    <segue destination="14984" kind="show" identifier="CashbackSegue" id="218306"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="NavigationIcon" id="239450">
-                                <connections>
-                                    <action selector="NavigateButton_Activated:" destination="177988" id="239451"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="216401"/>
                     <connections>
-                        <outlet property="CashbackButton" destination="216402" id="name-outlet-216402"/>
                         <outlet property="CouponsTable" destination="178142" id="name-outlet-178142"/>
-                        <outlet property="NavigateButton" destination="239450" id="name-outlet-239450"/>
                         <outlet property="StoreImage" destination="178114" id="name-outlet-178114"/>
                     </connections>
                 </viewController>
@@ -3218,6 +3223,61 @@
             </objects>
             <point key="canvasLocation" x="-2161" y="804"/>
         </scene>
+        <scene sceneID="358627">
+            <objects>
+                <viewController id="358628" sceneMemberID="viewController" customClass="ActionController">
+                    <view key="view" contentMode="scaleToFill" id="358629">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="361078" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="149" y="229" width="145" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue id="361155" destination="44412" kind="show"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="364839"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="358630" translatesAutoresizingMaskIntoConstraints="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btn" destination="361078" id="name-outlet-361078"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="358631" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-540" y="524"/>
+        </scene>
+        <scene sceneID="366641">
+            <objects>
+                <viewController id="366642" sceneMemberID="viewController" customClass="SpecialProductsController">
+                    <view key="view" contentMode="scaleToFill" id="366643">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="366647"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="367800" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="46" y="180" width="164" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue id="367893" destination="44412" kind="show"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="366644" translatesAutoresizingMaskIntoConstraints="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="366645" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1073" y="138"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="218532"/>
@@ -3231,7 +3291,6 @@
         <image name="AddIcon" width="25" height="25"/>
         <image name="ArrowLeftIcon" width="25" height="25"/>
         <image name="ArrowRightIcon" width="25" height="25"/>
-        <image name="CashbackIcon" width="25" height="25"/>
         <image name="Dashboard-Image-1" width="500" height="500"/>
         <image name="Dashboard-Image-5" width="500" height="500"/>
         <image name="E-BillIconColored" width="48" height="48"/>
@@ -3244,7 +3303,6 @@
         <image name="MapsIcon" width="25" height="25"/>
         <image name="MapsIconFilled" width="25" height="25"/>
         <image name="MapsIconFilledTall" width="65" height="65"/>
-        <image name="NavigationIcon" width="25" height="25"/>
         <image name="Points" width="512" height="512"/>
         <image name="PointsIconSmall" width="70" height="70"/>
         <image name="ReportIconColored" width="48" height="48"/>

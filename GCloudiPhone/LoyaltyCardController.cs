@@ -201,5 +201,27 @@ namespace GCloudiPhone
             // Automatski nas prebacuje na webViewOurProducts
             ((TabBarController)TabBarController).ChangeSelectedItem(6);
         }
+
+        partial void OpenAktionenTab(UIButton sender)
+        {
+            // Ako koristimo Safari, gde je back button automatski implementiran:
+            // UIApplication.SharedApplication.OpenUrl(urlOurMenu);
+
+            TabBarController.TabBar.Hidden = false;
+            // Automatski nas prebacuje na webViewOurProducts
+            ((TabBarController)TabBarController).ChangeSelectedItem(7);
+        }
+
+        partial void OpenSpecialProductsTab(UIButton sender)
+        {
+            // Ako koristimo Safari, gde je back button automatski implementiran:
+            // UIApplication.SharedApplication.OpenUrl(urlOurMenu);
+
+            TabBarController.TabBar.Hidden = false;
+            // Automatski nas prebacuje na webViewOurProducts
+            ((TabBarController)TabBarController).ChangeSelectedItem(8);
+        }
+
+       
     }
 }

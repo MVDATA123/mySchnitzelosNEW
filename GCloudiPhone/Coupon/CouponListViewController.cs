@@ -25,8 +25,8 @@ namespace GCloudiPhone
         private UIRefreshControl refreshControl;
         private LoadingOverlay loadingView;
         private NoElementsFoundOverlay noElementsFound;
-
-        public StoreLocationDto Store { get; set; }
+        public string CouponType;
+        //public StoreLocationDto Store { get; set; }
 
         public CouponListViewController(IntPtr handle) : base(handle)
         {
@@ -55,34 +55,34 @@ namespace GCloudiPhone
             {
                 DimsBackgroundDuringPresentation = false
             };
-            search.SearchResultsUpdater = this;
-            search.SearchBar.Placeholder = "Gutscheine durchsuchen";
-            search.SearchBar.SetValueForKey(new NSString("Abbrechen"), new NSString("_cancelButtonText"));
-            search.SearchBar.ScopeButtonTitles = new string[] { "Alles", "Tags" };
-            if (UIDevice.CurrentDevice.CheckSystemVersion(11, 0))
-            {
-                NavigationItem.SearchController = search;
-                NavigationItem.HidesSearchBarWhenScrolling = false;
-            }
-            else
-            {
-                search.SearchBar.SearchBarStyle = UISearchBarStyle.Default;
-                search.SearchBar.SizeToFit();
-                CouponList.TableHeaderView = search.SearchBar;
-            }
+            //search.SearchResultsUpdater = this;
+            //search.SearchBar.Placeholder = "Gutscheine durchsuchen";
+            //search.SearchBar.SetValueForKey(new NSString("Abbrechen"), new NSString("_cancelButtonText"));
+            //search.SearchBar.ScopeButtonTitles = new string[] { "Alles", "Tags" };
+            //if (UIDevice.CurrentDevice.CheckSystemVersion(11, 0))
+            //{
+            //    NavigationItem.SearchController = search;
+            //    NavigationItem.HidesSearchBarWhenScrolling = false;
+            //}
+            //else
+            //{
+            //    search.SearchBar.SearchBarStyle = UISearchBarStyle.Default;
+            //    search.SearchBar.SizeToFit();
+            //    CouponList.TableHeaderView = search.SearchBar;
+            //}
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
 
-            if (Store != null)
-            {
-                NavigationItem.Title = Store.Name;
+                //Fiksni naziv radnje
+                NavigationItem.Title = "Eisenstadt";
+
                 var cashbackBtn = new UIBarButtonItem(UIImage.FromBundle("CashbackIcon"), UIBarButtonItemStyle.Plain, (sender, e) => PerformSegue("CashbackSegue", this));
                 NavigationItem.SetRightBarButtonItems(new UIBarButtonItem[] { cashbackBtn }, true);
                 NavigationItem.SetLeftBarButtonItem(null, true);
-            }
+            
 
             if (((AppDelegate)UIApplication.SharedApplication.Delegate).AuthState == AuthState.Unauthorized)
             {
@@ -95,7 +95,7 @@ namespace GCloudiPhone
 
         private async Task<bool> LoadCoupons()
         {
-            if (((AppDelegate)UIApplication.SharedApplication.Delegate).AuthState == AuthState.Unauthorized && Store == null)
+            if (((AppDelegate)UIApplication.SharedApplication.Delegate).AuthState == AuthState.Unauthorized)
             {
                 CouponList.Source = new CouponTableSource(new List<CouponDto>());
                 CouponList.ReloadData();
@@ -108,14 +108,18 @@ namespace GCloudiPhone
 
             try
             {
-                if (Store == null)
+                //Dodat fiksni GUID
+                Guid storeGuid = new Guid("1F526AA2-621F-EC11-901F-48F17F295823");
+                if (CouponType == "WithoutSpecialProducts")
                 {
-                    _coupons = await _couponService.GetUserCoupons(true);
+                    _coupons = CacheHolder.Instance.GetCouponsByStore(storeGuid).Values().ToList().Where(s => s.CouponType != CouponTypeDto.SpecialProductPoints).ToList();
                 }
-                else
+                else if (CouponType == "WithSpecialProducts")
                 {
-                    _coupons = CacheHolder.Instance.GetCouponsByStore(Store.Id).Values().ToList();
+                    _coupons = CacheHolder.Instance.GetCouponsByStore(storeGuid).Values().ToList().Where(s => s.CouponType == CouponTypeDto.SpecialProductPoints).ToList();
                 }
+                   
+               
             }
             catch (ApiException)
             {
@@ -154,7 +158,7 @@ namespace GCloudiPhone
             else if (segue.Identifier == "CashbackSegue")
             {
                 var cashbackViewController = segue.DestinationViewController as CashbackViewController;
-                cashbackViewController.StoreGuid = Store.Id.ToString();
+                cashbackViewController.StoreGuid = "1F526AA2-621F-EC11-901F-48F17F295823";
             }
             base.PrepareForSegue(segue, sender);
         }
