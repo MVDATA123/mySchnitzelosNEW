@@ -188,7 +188,7 @@ namespace GCloudiPhone
             {
                 var storeDetailViewController = segue.DestinationViewController as StoreCouponViewController;
                 var storeListItem = sender as StoreListItem;
-                storeDetailViewController.Store = sender is NSObjectWrapper ? ((NSObjectWrapper)sender).Context as StoreLocationDto : storeListItem.Store;
+                //storeDetailViewController.Store = sender is NSObjectWrapper ? ((NSObjectWrapper)sender).Context as StoreLocationDto : storeListItem.Store;
 
                 if (search != null && search.Active)
                     {
