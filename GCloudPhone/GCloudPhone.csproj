@@ -281,6 +281,10 @@
     <Compile Include="RecycleView\BillTaxes\BillTaxesViewHolder.cs" />
     <Compile Include="RecycleView\BillPayments\BillPaymentsAdapter.cs" />
     <Compile Include="RecycleView\BillPayments\BillPaymentsViewHolder.cs" />
+    <Compile Include="RegisterTableViewController.cs" />
+    <Compile Include="RegisterTableViewController.designer.cs">
+      <DependentUpon>RegisterTableViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

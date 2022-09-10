@@ -19,7 +19,9 @@ using GCloud.Shared.Exceptions;
 using GCloudShared.Extensions;
 using GCloudShared.Service;
 using GCloudShared.Service.Dto;
+using GCloudShared.Service.WebShopRegisterServices;
 using GCloudShared.Shared;
+using Java.Util;
 using mvdata.foodjet.Control;
 using Newtonsoft.Json;
 using Refit;
@@ -32,13 +34,16 @@ namespace mvdata.foodjet
     {
         private LinearLayout _mainRoot;
 
+        private string _invitationCodeSender = null;
+
         private EditText _txtUsername,
             _txtPassword,
             _passwordRepeatEditText,
             _txtEmail,
             _txtBirthday,
             _txtFirstName,
-            _txtLastName;
+            _txtLastName,
+            _txtInvitationCode;
 
         private TextView _txtRegisterAlreadyMember;
         private Button _btnRegister;
@@ -50,6 +55,12 @@ namespace mvdata.foodjet
         private DateTime? _selectedBirthday = null;
 
         private IAuthService _authService;
+
+        private IWebShopService webShopService;
+
+        private RegisterToWebShopResult registerToWebShopResult;
+
+        private static System.Random random = new System.Random();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -71,6 +82,8 @@ namespace mvdata.foodjet
             _txtBirthday.ShowSoftInputOnFocus = false;
 
             _authService = RestService.For<IAuthService>(HttpClientContainer.Instance.HttpClient, HttpClientContainer.Instance.RefitSettings);
+
+            webShopService = RestService.For<IWebShopService>("https://test1.willessen.online");
 
             _btnRegister.Click += PerformRegister;
             _txtRegisterAlreadyMember.Click += (sender, args) => Finish();
@@ -176,6 +189,121 @@ namespace mvdata.foodjet
             return result;
         }
 
+
+        private bool CheckInvitationCode()
+        {
+            var result = false;
+            var invitationCode = _txtInvitationCode.Text;
+            var errorMessage = "";
+
+
+
+
+            bool isAvailable = false;
+            try
+            {
+                isAvailable = _authService.IsInvitationCodeAvailable(invitationCode).Result;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            if (!string.IsNullOrWhiteSpace(invitationCode))
+            {
+                if (isAvailable)
+                {
+                    errorMessage = "Freundes-Code ist ungültig!";
+                }
+                else
+                {
+                    _invitationCodeSender = _authService.InvitationCodeSenderId(invitationCode).Result;
+                    errorMessage = null;
+                    result = true;
+                }
+            }
+            else
+            {
+                errorMessage = null;
+                result = true;
+            }
+
+            RunOnUiThread(() => _txtInvitationCode.Error = errorMessage);
+            return result;
+        }
+
+
+
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+
+        public async Task RegisterToGCloud()
+        {
+            DateTime dt = new DateTime(1900, 01, 01);
+            await _authService.RegisterUser(new RegisterRequestModel()
+            {
+                ConfirmPassword = _passwordRepeatEditText.Text,
+                //Username is email adress
+                Username = _txtEmail.Text,
+                Password = _txtPassword.Text,
+                Email = _txtEmail.Text,
+                Birthday = _selectedBirthday ?? dt,
+                //No First and Last Name
+                FirstName = "NoFirstName",
+                LastName = "NoLastName",
+                InvitationCode = RandomString(9),
+                InvitationCodeSender = _invitationCodeSender == null ? _invitationCodeSender : _invitationCodeSender.Replace("\"", "")
+            });
+        }
+
+        public async Task RegisterToWebShop()
+        {
+
+            if (!registerToWebShopResult.Success)
+            {
+                await webShopService.ResetPasswordInWebShopFromGcloud(new RecoveryPasswordToWebShopModel
+                {
+                    Email = _txtEmail.Text,
+                    NewPassword = _txtPassword.Text,
+                    Result = null
+                });
+
+                //mozda ispod neki alert da sam resetovala password u WebShopu na osnovu rezultata await webShopService.ResetPasswordInWebShopFromGcloud()
+                //mozda i neka firebase notifikacija da se posalje....
+            }
+            else
+            {
+                await webShopService.Register(new RegisterToWebShopModel()
+                {
+                    ConfirmPassword = _passwordRepeatEditText.Text,
+                    //Username is email adress
+                    Username = _txtEmail.Text,
+                    Password = _txtPassword.Text,
+                    Email = _txtEmail.Text,
+                    //No First and Last Name
+                    FirstName = "No name",
+                    LastName = "No name"
+
+                });
+
+                await webShopService.SetWelcomeEmailToWebShopFromGcloud(new RecoveryPasswordToWebShopModel
+                {
+                    Email = _txtEmail.Text,
+                    NewPassword = _txtPassword.Text,
+                    Result = null
+
+                });
+            }
+
+
+        }
+
+
+
         private async void PerformRegister(object sender, EventArgs eventArgs)
         {
             if (!ValidateRegister())
@@ -183,20 +311,34 @@ namespace mvdata.foodjet
                 return;
             }
 
+            registerToWebShopResult = JsonConvert.DeserializeObject<RegisterToWebShopResult>(webShopService.CheckIfUserIsAlreadyRegistredInWebShop(new RegisterToWebShopModel()
+            {
+                ConfirmPassword = _passwordRepeatEditText.Text,
+                //Username is email adress
+                Username = _txtEmail.Text,
+                Password = _txtPassword.Text,
+                Email = _txtEmail.Text,
+                //No First and Last Name
+                FirstName = "No name",
+                LastName = "No name"
+            }).Result);
+
             _progressBar.Visibility = ViewStates.Visible;
 
             try
             {
-                await _authService.RegisterUser(new RegisterRequestModel()
-                {
-                    ConfirmPassword = _passwordRepeatEditText.Text,
-                    Username = _txtUsername.Text,
-                    Password = _txtPassword.Text,
-                    Email = _txtEmail.Text,
-                    Birthday = _selectedBirthday ?? DateTime.Now,
-                    FirstName = _txtFirstName.Text,
-                    LastName = _txtLastName.Text
-                });
+                //await _authService.RegisterUser(new RegisterRequestModel()
+                //{
+                //    ConfirmPassword = _passwordRepeatEditText.Text,
+                //    Username = _txtUsername.Text,
+                //    Password = _txtPassword.Text,
+                //    Email = _txtEmail.Text,
+                //    Birthday = _selectedBirthday ?? DateTime.Now,
+                //    FirstName = _txtFirstName.Text,
+                //    LastName = _txtLastName.Text
+                //});
+
+                await Task.WhenAny(RegisterToGCloud(), RegisterToWebShop());
 
                 _progressBar.Visibility = ViewStates.Invisible;
 

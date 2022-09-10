@@ -231,10 +231,6 @@
       <DependentUpon>StoreMapViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Store\StoreMapViewDelegate.cs" />
-    <Compile Include="Account\RegisterTableViewController.cs" />
-    <Compile Include="Account\RegisterTableViewController.designer.cs">
-      <DependentUpon>RegisterTableViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Account\ChangePasswordTableViewController.cs" />
     <Compile Include="Account\ChangePasswordTableViewController.designer.cs">
       <DependentUpon>ChangePasswordTableViewController.cs</DependentUpon>
@@ -377,6 +373,10 @@
     <Compile Include="SpecialProductsController.cs" />
     <Compile Include="SpecialProductsController.designer.cs">
       <DependentUpon>SpecialProductsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterTableViewController.cs" />
+    <Compile Include="Account\RegisterTableViewController.designer.cs">
+      <DependentUpon>RegisterTableViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

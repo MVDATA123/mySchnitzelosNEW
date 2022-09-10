@@ -50,5 +50,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Domain\LogMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Domain\LogLevel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repository\LogRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Dto\RegisterToWebShopResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Dto\RegisterToWebShopModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\WebShopRegisterServices\IWebShopService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Dto\RecoveryPasswordToWebShopModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Service\WebShopRegisterServices\" />
   </ItemGroup>
 </Project>
