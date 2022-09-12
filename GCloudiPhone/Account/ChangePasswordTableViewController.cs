@@ -7,17 +7,27 @@ using GCloudShared.Service.Dto;
 using GCloudShared.Shared;
 using Refit;
 using CoreGraphics;
+using GCloudShared.Service.WebShopRegisterServices;
+using GCloudShared.Repository;
+using GCloudShared.Domain;
 
 namespace GCloudiPhone
 {
     public partial class ChangePasswordTableViewController : UITableViewController
     {
         IAuthService authService;
+        private IWebShopService webShopService;
+        private readonly UserRepository _userRepository;
         private UITapGestureRecognizer tap;
+        private User currentUser;
 
         public ChangePasswordTableViewController(IntPtr handle) : base(handle)
         {
             authService = RestService.For<IAuthService>(HttpClientContainer.Instance.HttpClient);
+            webShopService = RestService.For<IWebShopService>("https://test1.willessen.online");
+            
+            _userRepository = new UserRepository(DbBootstraper.Connection);
+            currentUser = _userRepository.GetCurrentUser();
             tap = new UITapGestureRecognizer(DismissKeyboard);
         }
 
@@ -104,6 +114,13 @@ namespace GCloudiPhone
                     OldPassword = OldPwLabel.Text,
                     NewPassword = NewPwLabel.Text,
                     ConfirmPassword = ConfirmNewPwLabel.Text
+                });
+
+                await webShopService.ResetPasswordInWebShopFromGcloud(new RecoveryPasswordToWebShopModel
+                {
+                    Email = currentUser.Email,
+                    NewPassword = NewPwLabel.Text,
+                    Result = null
                 });
 
                 InvokeOnMainThread(() =>

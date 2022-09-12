@@ -235,6 +235,10 @@ namespace GCloudiPhone
 
                 });
 
+
+
+             
+
                 await webShopService.SetWelcomeEmailToWebShopFromGcloud(new RecoveryPasswordToWebShopModel
                 {
                     Email = EmailTextField.Text.Trim(),
