@@ -146,7 +146,8 @@ namespace GCloudiPhone
                     ((AppDelegate)UIApplication.SharedApplication.Delegate).LogoffRedirectToLogin();
                 }
             }
-            _stores = CacheHolder.Instance.Stores.Values().Where(store => store.IsUserFollowing).ToList();
+            //_stores = CacheHolder.Instance.Stores.Values().Where(store => store.IsUserFollowing).ToList();
+            _stores = CacheHolder.Instance.Stores.Values().OrderByDescending(s => s.CreationDateTime).ToList();
 
             if (tableSource == null)
             {

@@ -378,6 +378,10 @@
     <Compile Include="Account\RegisterTableViewController.designer.cs">
       <DependentUpon>RegisterTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="OnlineShopController.cs" />
+    <Compile Include="OnlineShopController.designer.cs">
+      <DependentUpon>OnlineShopController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard">

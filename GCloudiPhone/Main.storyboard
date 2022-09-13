@@ -359,7 +359,9 @@
                         <segue id="328297" destination="328293" kind="relationship" relationship="viewControllers"/>
                         <segue id="358632" destination="358628" kind="relationship" relationship="viewControllers"/>
                         <segue id="366646" destination="366642" kind="relationship" relationship="viewControllers"/>
+                        <segue id="376063" destination="376059" kind="relationship" relationship="viewControllers"/>
                     </connections>
+                    <navigationItem title="Title" id="372003" key="navigationItem"/>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
@@ -611,7 +613,6 @@
                                     <outlet property="CompanyName" destination="1464" id="sjb-jG-CiR"/>
                                     <outlet property="DistanceLabel" destination="40371" id="name-outlet-40371"/>
                                     <outlet property="StoreName" destination="1490" id="4G5-zA-nVe"/>
-                                    <segue destination="177988" kind="show" identifier="StoreDetailSegue" id="178097"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -631,7 +632,6 @@
                     <connections>
                         <outlet property="AddStoreButton" destination="42526" id="name-outlet-42526"/>
                         <outlet property="StoreList" destination="491" id="0c9-ZI-XNj"/>
-                        <segue destination="44412" kind="show" identifier="StoreCouponsSegue" id="127566"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="496" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3277,6 +3277,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="366645" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1073" y="138"/>
+        </scene>
+        <scene sceneID="376058">
+            <objects>
+                <viewController id="376059" sceneMemberID="viewController" customClass="OnlineShopController">
+                    <view key="view" contentMode="scaleToFill" id="376060">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="380106" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="123" y="172" width="119" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue id="380153" destination="490" kind="show"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="376061" translatesAutoresizingMaskIntoConstraints="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="376062" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1066" y="1731"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

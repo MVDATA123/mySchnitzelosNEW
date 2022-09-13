@@ -286,7 +286,8 @@ namespace GCloudiPhone
 
             try
             {
-                stores = Caching.CacheHolder.Instance.Stores.Values().ToList();
+                //stores = Caching.CacheHolder.Instance.Stores.Values().ToList();
+                stores = Caching.CacheHolder.Instance.Stores.Values().OrderByDescending(s => s.CreationDateTime).ToList();
             }
             catch (ApiException apiEx)
             {
