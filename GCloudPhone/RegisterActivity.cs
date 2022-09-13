@@ -83,7 +83,7 @@ namespace mvdata.foodjet
 
             _authService = RestService.For<IAuthService>(HttpClientContainer.Instance.HttpClient, HttpClientContainer.Instance.RefitSettings);
 
-            webShopService = RestService.For<IWebShopService>("https://test1.willessen.online");
+            webShopService = RestService.For<IWebShopService>("https://neunkirchen.myschnitzel.at/");
 
             _btnRegister.Click += PerformRegister;
             _txtRegisterAlreadyMember.Click += (sender, args) => Finish();

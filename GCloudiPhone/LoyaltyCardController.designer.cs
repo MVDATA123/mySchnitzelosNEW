@@ -70,6 +70,10 @@ namespace GCloudiPhone
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void MapButton_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("OnlineShop:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void OnlineShop (UIKit.UIButton sender);
+
         [Action ("OpenAktionenTab:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void OpenAktionenTab (UIKit.UIButton sender);

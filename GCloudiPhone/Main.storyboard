@@ -201,6 +201,14 @@
                                     <action selector="OpenSpecialProductsTab:" destination="9pv-A4-QxB" id="366635" eventType="touchUpInside"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="385425" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="245" y="354" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Online"/>
+                                <connections>
+                                    <action selector="OnlineShop:" destination="9pv-A4-QxB" id="385426" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hvg-5B-IRm"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -613,6 +621,7 @@
                                     <outlet property="CompanyName" destination="1464" id="sjb-jG-CiR"/>
                                     <outlet property="DistanceLabel" destination="40371" id="name-outlet-40371"/>
                                     <outlet property="StoreName" destination="1490" id="4G5-zA-nVe"/>
+                                    <segue id="386699" destination="386585" kind="show" identifier="webShopSegue"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -621,12 +630,12 @@
                             <outlet property="delegate" destination="490" id="493"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favoriten" id="42015">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="AddIcon" id="42526">
+                    <navigationItem key="navigationItem" title="Unsere Filialen" id="42015">
+                    <!--    <barButtonItem key="rightBarButtonItem" title="Item" image="AddIcon" id="42526">
                             <connections>
                                 <action selector="AddStoreButton_Activated:" destination="490" id="42736"/>
                             </connections>
-                        </barButtonItem>
+                        </barButtonItem>-->
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -3295,6 +3304,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="385427"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="376061" translatesAutoresizingMaskIntoConstraints="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -3302,6 +3312,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="376062" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1066" y="1731"/>
+        </scene>
+        <scene sceneID="386584">
+            <objects>
+                <viewController id="386585" sceneMemberID="viewController" customClass="WebShopViewController">
+                    <view key="view" contentMode="scaleToFill" id="386586">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="386583"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="386587" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="972"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

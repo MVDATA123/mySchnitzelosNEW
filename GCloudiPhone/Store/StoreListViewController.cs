@@ -185,16 +185,23 @@ namespace GCloudiPhone
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            if (segue.Identifier == "StoreDetailSegue")
-            {
-                var storeDetailViewController = segue.DestinationViewController as StoreCouponViewController;
-                var storeListItem = sender as StoreListItem;
-                //storeDetailViewController.Store = sender is NSObjectWrapper ? ((NSObjectWrapper)sender).Context as StoreLocationDto : storeListItem.Store;
+            //if (segue.Identifier == "StoreDetailSegue")
+            //{
+            //    var storeDetailViewController = segue.DestinationViewController as StoreCouponViewController;
+            //    var storeListItem = sender as StoreListItem;
+            //    //storeDetailViewController.Store = sender is NSObjectWrapper ? ((NSObjectWrapper)sender).Context as StoreLocationDto : storeListItem.Store;
 
-                if (search != null && search.Active)
-                    {
-                        search.Active = false;
-                }
+            //    if (search != null && search.Active)
+            //        {
+            //            search.Active = false;
+            //    }
+            //}
+
+            if (segue.Identifier == "webShopSegue")
+            {
+                var webShopViewController = segue.DestinationViewController as WebShopViewController;
+                var storeListItem = sender as StoreListItem;
+                webShopViewController.Store = storeListItem.Store;
             }
 
             base.PrepareForSegue(segue, sender);

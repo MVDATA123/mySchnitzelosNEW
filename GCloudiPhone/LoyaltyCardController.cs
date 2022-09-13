@@ -222,6 +222,14 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).ChangeSelectedItem(8);
         }
 
-       
+        partial void OnlineShop(UIButton sender)
+        {
+            // Ako koristimo Safari, gde je back button automatski implementiran:
+            // UIApplication.SharedApplication.OpenUrl(urlOurMenu);
+
+            TabBarController.TabBar.Hidden = false;
+            // Automatski nas prebacuje na webViewOurProducts
+            ((TabBarController)TabBarController).ChangeSelectedItem(9);
+        }
     }
 }

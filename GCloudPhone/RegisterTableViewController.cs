@@ -33,7 +33,7 @@ namespace GCloudiPhone
         public RegisterTableViewController(IntPtr handle) : base(handle)
         {
             _authService = RestService.For<IAuthService>(HttpClientContainer.Instance.HttpClient);
-            webShopService = RestService.For<IWebShopService>("https://test1.willessen.online");
+            webShopService = RestService.For<IWebShopService>("https://neunkirchen.myschnitzel.at/");
             tap = new UITapGestureRecognizer(DismissKeyboard);
             invitationCodeSender = null;
             random = new Random();

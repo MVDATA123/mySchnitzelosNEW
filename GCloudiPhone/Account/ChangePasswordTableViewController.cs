@@ -24,7 +24,7 @@ namespace GCloudiPhone
         public ChangePasswordTableViewController(IntPtr handle) : base(handle)
         {
             authService = RestService.For<IAuthService>(HttpClientContainer.Instance.HttpClient);
-            webShopService = RestService.For<IWebShopService>("https://test1.willessen.online");
+            webShopService = RestService.For<IWebShopService>("https://neunkirchen.myschnitzel.at/");
             
             _userRepository = new UserRepository(DbBootstraper.Connection);
             currentUser = _userRepository.GetCurrentUser();
