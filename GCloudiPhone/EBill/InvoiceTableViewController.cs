@@ -20,7 +20,7 @@ namespace GCloudiPhone
         private InvoiceTableDataSource tableDataSource;
         private List<Bill_Out_Dto> invoices;
 
-        private UISearchController searchController;
+        //private UISearchController searchController;
 
 
         public InvoiceTableViewController(IntPtr handle) : base(handle)
@@ -35,14 +35,14 @@ namespace GCloudiPhone
             TableView.TableHeaderView = new UIView(new CGRect(0, 0, 0, 0));
             TableView.TableFooterView = new UIView(new CGRect(0, 0, 0, 0));
 
-            searchController = new ColoredUISearchController(searchResultsController: null)
-            {
-              DimsBackgroundDuringPresentation = false,
-              HidesNavigationBarDuringPresentation = false
-            };
+            //searchController = new ColoredUISearchController(searchResultsController: null)
+            //{
+            //  DimsBackgroundDuringPresentation = false,
+            //  HidesNavigationBarDuringPresentation = false
+            //};
 
-            searchController.SearchResultsUpdater = this;
-            searchController.SearchBar.Placeholder = "Rechnungen durchsuchen";
+            //searchController.SearchResultsUpdater = this;
+            //searchController.SearchBar.Placeholder = "Rechnungen durchsuchen";
 
            // if (UIDevice.CurrentDevice.CheckSystemVersion(11, 0))
            // {
@@ -51,11 +51,11 @@ namespace GCloudiPhone
            // }
            // else
            // {
-              searchController.SearchBar.SearchBarStyle = UISearchBarStyle.Default;
-              searchController.SearchBar.SizeToFit();
-              TableView.TableHeaderView = searchController.SearchBar;
+              //searchController.SearchBar.SearchBarStyle = UISearchBarStyle.Default;
+              //searchController.SearchBar.SizeToFit();
+              //TableView.TableHeaderView = searchController.SearchBar;
               //searchController.SearchBar.ShowsCancelButton = true;
-              searchController.SearchBar.TintColor = UIColor.Gray;
+              //searchController.SearchBar.TintColor = UIColor.Gray;
            // }
 
             RefreshControl = new UIRefreshControl();
@@ -72,13 +72,13 @@ namespace GCloudiPhone
             {
                 LoadInvoices();
 
-                searchController.SearchBar.Hidden = false;
+                //searchController.SearchBar.Hidden = false;
             }
             else
             {
                 TableViewHelper.EmptyMessage("Wenn du dich anmeldest werden hier deine Rechnungen angezeigt.", new WeakReference<UITableViewController>(this));
 
-                searchController.SearchBar.Hidden = true;
+               // searchController.SearchBar.Hidden = true;
             }
 
             exportInvoices.Enabled = false; // Dodato jer izbacuje iz aplikacije (za potencijalnu buducu nadogradnju)
@@ -116,12 +116,12 @@ namespace GCloudiPhone
 
                 ((AppDelegate)UIApplication.SharedApplication.Delegate).ShowNoInternetMessage();
             }
-            if (searchController != null && searchController.Active)
-            {
-                UpdateSearchResultsForSearchController(searchController);
-            }
-            else
-            {
+            //if (searchController != null && searchController.Active)
+            //{
+            //    UpdateSearchResultsForSearchController(searchController);
+            //}
+            //else
+            //{
                 var groupedInvoices = invoices.OrderByDescending(i => i.Invoice.InvoiceDate).GroupBy(i => i.Invoice.InvoiceDate.ToShortDateString()).Select(i => i.ToList()).ToList();
 
                 if (groupedInvoices.Count == 0)
@@ -130,19 +130,19 @@ namespace GCloudiPhone
                     TableViewHelper.EmptyMessage("Es sind noch keine Rechnungen verfügbar.", new WeakReference<UITableViewController>(this));
                     RefreshControl.EndRefreshing();
 
-                    
+
                 }
 
                 TableView.BackgroundView = null;
 
                 if (tableDataSource == null)
                 {
-                    
+
                     tableDataSource = new InvoiceTableDataSource();
                     TableView.WeakDataSource = tableDataSource;
                 }
                 tableDataSource.UpdateTable(TableView, groupedInvoices);
-            }
+            //}
             RefreshControl.EndRefreshing();
         }
 
@@ -156,10 +156,10 @@ namespace GCloudiPhone
                 invoiceDetailsVC.Invoice = tableDataSource.GetSelectedInvoice(TableView.IndexPathForSelectedRow);
             }
 
-            if (searchController != null && searchController.Active)
-            {
-                searchController.Active = false;
-            }
+            //if (searchController != null && searchController.Active)
+            //{
+            //    searchController.Active = false;
+            //}
         }
 
         partial void ExportInvoices_Activated(UIBarButtonItem sender)

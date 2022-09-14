@@ -631,7 +631,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Unsere Filialen" id="42015">
-                    <!--    <barButtonItem key="rightBarButtonItem" title="Item" image="AddIcon" id="42526">
+                        <!--    <barButtonItem key="rightBarButtonItem" title="Item" image="AddIcon" id="42526">
                             <connections>
                                 <action selector="AddStoreButton_Activated:" destination="490" id="42736"/>
                             </connections>
@@ -1002,16 +1002,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Konto" id="32154">
+                            <tableViewSection id="32154">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="32160">
-                                        <rect key="frame" x="0.0" y="63" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="32160" id="32161">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="235739">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Benutzer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="235739">
                                                     <rect key="frame" x="40" y="8" width="327" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -1030,13 +1030,13 @@
                                         <inset key="separatorInset" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="32155">
-                                        <rect key="frame" x="0.0" y="133" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="105" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="32155" id="32158">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Passwort ändern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32159">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Passwortverwaltung" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32159">
                                                     <rect key="frame" x="40" y="12" width="245" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -1054,7 +1054,7 @@
                             <tableViewSection id="104464">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="104465">
-                                        <rect key="frame" x="0.0" y="233" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="205" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="104465" id="104466">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1093,7 +1093,7 @@
                             <tableViewSection headerTitle="Informationen" id="281592">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="281593">
-                                        <rect key="frame" x="0.0" y="333" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="305" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="281593" id="281594">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
@@ -1114,10 +1114,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Diagnose" id="277855">
+                            <tableViewSection headerTitle="Digitale Rechnungen" id="277855">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="277856">
-                                        <rect key="frame" x="0.0" y="433" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="405" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="277856" id="277857">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1129,9 +1129,11 @@
                                                         <constraint firstAttribute="height" constant="44" id="oGM-45-0L7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <state key="normal" title="Sende Diagnoseinformationen"/>
+                                                    <state key="normal" title="Rechnungsverwaltung">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
                                                     <connections>
-                                                        <action selector="SendDiagnosticsBtn_TouchUpInside:" destination="32107" eventType="touchUpInside" id="277865"/>
+                                                        <segue id="407314" destination="279771" kind="show"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1157,10 +1159,10 @@
                         <outlet property="LogoutButton" destination="104463" id="name-outlet-104463"/>
                         <outlet property="LogoutCell" destination="104465" id="name-outlet-104465"/>
                         <outlet property="PersonalInformationCell" destination="32160" id="name-outlet-32160"/>
-                        <outlet property="SendDiagnosticsBtn" destination="277862" id="name-outlet-277862"/>
                         <outlet property="SettingsTable" destination="32153" id="name-outlet-32153"/>
                         <outlet property="UsernameLabel" destination="235739" id="name-outlet-235739"/>
                         <segue destination="6298" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="107024"/>
+                        <outlet property="EBill" destination="277862" id="name-outlet-277862"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32113" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3251,7 +3253,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="364839"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="358630" translatesAutoresizingMaskIntoConstraints="NO"/>
+                    <tabBarItem key="tabBarItem" title="Aktionen" id="358630" translatesAutoresizingMaskIntoConstraints="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="btn" destination="361078" id="name-outlet-361078"/>
@@ -3280,7 +3282,7 @@
                             </button>
                         </subviews>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="366644" translatesAutoresizingMaskIntoConstraints="NO"/>
+                    <tabBarItem key="tabBarItem" title="Punkte einlösen" id="366644" translatesAutoresizingMaskIntoConstraints="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="366645" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3306,7 +3308,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="385427"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="376061" translatesAutoresizingMaskIntoConstraints="NO"/>
+                    <tabBarItem key="tabBarItem" title="Online bestellen" id="376061" translatesAutoresizingMaskIntoConstraints="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="376062" userLabel="First Responder" sceneMemberID="firstResponder"/>

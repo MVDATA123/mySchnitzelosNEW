@@ -87,7 +87,7 @@ namespace GCloudiPhone
             }
             else
             {
-                NavigationItem.RightBarButtonItem = AddStoreButton;
+                //NavigationItem.RightBarButtonItem = AddStoreButton;
             }
 
             RefreshControl.ValueChanged += RefreshControl_ValueChanged;
@@ -252,10 +252,10 @@ namespace GCloudiPhone
         }
 
         #region QR-Code-Scanner
-        partial void AddStoreButton_Activated(UIBarButtonItem sender)
-        {
-            StartScanner();
-        }
+        //partial void AddStoreButton_Activated(UIBarButtonItem sender)
+        //{
+        //    StartScanner();
+        //}
 
         async void StartScanner()
         {

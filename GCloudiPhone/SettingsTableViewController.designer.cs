@@ -24,6 +24,10 @@ namespace GCloudiPhone
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton EBill { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel EmailLabel { get; set; }
 
         [Outlet]
@@ -44,19 +48,11 @@ namespace GCloudiPhone
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton SendDiagnosticsBtn { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView SettingsTable { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel UsernameLabel { get; set; }
-
-        [Action ("SendDiagnosticsBtn_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void SendDiagnosticsBtn_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -68,6 +64,11 @@ namespace GCloudiPhone
             if (ChangePasswordLabel != null) {
                 ChangePasswordLabel.Dispose ();
                 ChangePasswordLabel = null;
+            }
+
+            if (EBill != null) {
+                EBill.Dispose ();
+                EBill = null;
             }
 
             if (EmailLabel != null) {
@@ -93,11 +94,6 @@ namespace GCloudiPhone
             if (PersonalInformationCell != null) {
                 PersonalInformationCell.Dispose ();
                 PersonalInformationCell = null;
-            }
-
-            if (SendDiagnosticsBtn != null) {
-                SendDiagnosticsBtn.Dispose ();
-                SendDiagnosticsBtn = null;
             }
 
             if (SettingsTable != null) {

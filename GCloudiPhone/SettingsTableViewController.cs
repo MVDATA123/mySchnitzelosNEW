@@ -51,7 +51,8 @@ namespace GCloudiPhone
                 ChangePasswordLabel.TextColor = UIColor.Black;
                 UsernameLabel.TextColor = UIColor.Black;
                 var user = _userRepository.GetCurrentUser();
-                UsernameLabel.Text = user.Username;
+                //UsernameLabel.Text = user.Username;
+                UsernameLabel.Text = "Benutzer";
                 EmailLabel.Text = user.Email;
                 ChangePasswordCell.UserInteractionEnabled = true;
                 LogoutButton.TouchUpInside += LogoutButton_TouchUpInside;
@@ -82,30 +83,30 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).Logout(this);
         }
 
-        partial void SendDiagnosticsBtn_TouchUpInside(UIButton sender)
-        {
-            if(MFMailComposeViewController.CanSendMail)
-            {
-                mailController = new MFMailComposeViewController();
+        //partial void SendDiagnosticsBtn_TouchUpInside(UIButton sender)
+        //{
+        //    if(MFMailComposeViewController.CanSendMail)
+        //    {
+        //        mailController = new MFMailComposeViewController();
 
-                mailController.SetToRecipients(new string[] { "support@mv-data.at" });
-                mailController.SetSubject("FoodJet-iOS Diagnoseinformationen");
-                var logs = _logRepository.FindAll();
-                var logJson = JsonConvert.SerializeObject(logs);
+        //        mailController.SetToRecipients(new string[] { "support@mv-data.at" });
+        //        mailController.SetSubject("FoodJet-iOS Diagnoseinformationen");
+        //        var logs = _logRepository.FindAll();
+        //        var logJson = JsonConvert.SerializeObject(logs);
 
-                var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
-                var filename = Path.Combine (documents, "DiagnosticsInformation.json");
-                File.WriteAllText(filename, logJson);
-                mailController.AddAttachmentData(NSData.FromStream(new FileStream(filename, FileMode.Open)), "application/json", "DiagnosticsInformation.json");
+        //        var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
+        //        var filename = Path.Combine (documents, "DiagnosticsInformation.json");
+        //        File.WriteAllText(filename, logJson);
+        //        mailController.AddAttachmentData(NSData.FromStream(new FileStream(filename, FileMode.Open)), "application/json", "DiagnosticsInformation.json");
 
-                mailController.Finished += (object s, MFComposeResultEventArgs e) =>
-                {
-                    e.Controller.DismissViewController(true, null);
-                    File.Delete(filename);
-                };
+        //        mailController.Finished += (object s, MFComposeResultEventArgs e) =>
+        //        {
+        //            e.Controller.DismissViewController(true, null);
+        //            File.Delete(filename);
+        //        };
 
-                this.PresentViewController(mailController, true, null);
-            }
-        }
+        //        this.PresentViewController(mailController, true, null);
+        //    }
+        //}
     }
 }
