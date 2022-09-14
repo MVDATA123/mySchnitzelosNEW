@@ -39,20 +39,20 @@ namespace GCloudiPhone
                 LoginButton.TouchUpInside += LoginButton_TouchUpInside;
                 LogoutCell.AddSubview(LoginButton);
                 EmailLabel.Text = "";
-                UsernameLabel.Text = "Hier werden Kontodetails angezeigt";
+                //UsernameLabel.Text = "Hier werden Kontodetails angezeigt";
                 ChangePasswordCell.Accessory = UITableViewCellAccessory.None;
                 ChangePasswordLabel.TextColor = UIColor.LightGray;
-                UsernameLabel.TextColor = UIColor.LightGray;
+                //UsernameLabel.TextColor = UIColor.LightGray;
 
             }
             else
             {
                 ChangePasswordCell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
                 ChangePasswordLabel.TextColor = UIColor.Black;
-                UsernameLabel.TextColor = UIColor.Black;
+                //UsernameLabel.TextColor = UIColor.Black;
                 var user = _userRepository.GetCurrentUser();
                 //UsernameLabel.Text = user.Username;
-                UsernameLabel.Text = "Benutzer";
+                //UsernameLabel.Text = "Benutzer";
                 EmailLabel.Text = user.Email;
                 ChangePasswordCell.UserInteractionEnabled = true;
                 LogoutButton.TouchUpInside += LogoutButton_TouchUpInside;

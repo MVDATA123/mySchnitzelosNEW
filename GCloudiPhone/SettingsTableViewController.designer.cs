@@ -50,10 +50,6 @@ namespace GCloudiPhone
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView SettingsTable { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel UsernameLabel { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
             if (ChangePasswordCell != null) {
@@ -99,11 +95,6 @@ namespace GCloudiPhone
             if (SettingsTable != null) {
                 SettingsTable.Dispose ();
                 SettingsTable = null;
-            }
-
-            if (UsernameLabel != null) {
-                UsernameLabel.Dispose ();
-                UsernameLabel = null;
             }
         }
     }
