@@ -108,5 +108,26 @@ namespace GCloudiPhone
         //        this.PresentViewController(mailController, true, null);
         //    }
         //}
+
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            if (segue.Identifier == "ImprintSegue")
+            {
+                var webViewController = segue.DestinationViewController as SettingsWebViewController;
+                webViewController.Type = "Imprint";
+            }
+            else if (segue.Identifier == "DataProtectionSegue")
+            {
+                var webViewController = segue.DestinationViewController as SettingsWebViewController;
+                webViewController.Type = "DataProtection";
+            }
+            else if (segue.Identifier == "TermsAndConditionSegue")
+            {
+                var webViewController = segue.DestinationViewController as SettingsWebViewController;
+                webViewController.Type = "TC";
+            }
+            base.PrepareForSegue(segue, sender);
+        }
     }
 }

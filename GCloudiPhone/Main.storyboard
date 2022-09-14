@@ -1002,10 +1002,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection id="32154">
+                            <tableViewSection headerTitle="Digitale Rechnungen" id="277855">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="32160">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="63" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="32160" id="32161">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -1019,7 +1019,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="eMail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="235740">
-                                                    <rect key="frame" x="40" y="37" width="327" height="21"/>
+                                                    <rect key="frame" x="40" y="39" width="327" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="0.33333333333333298" alpha="1" colorSpace="calibratedWhite"/>
@@ -1029,95 +1029,16 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="32155">
-                                        <rect key="frame" x="0.0" y="105" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="413218" rowHeight="70">
+                                        <rect key="frame" x="0.0" y="133" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="32155" id="32158">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="413218" id="413219">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Passwortverwaltung" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32159">
-                                                    <rect key="frame" x="40" y="12" width="245" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="65110" kind="show" id="65156"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="104464">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="104465">
-                                        <rect key="frame" x="0.0" y="205" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="104465" id="104466">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="104463">
-                                                    <rect key="frame" x="62" y="1" width="250" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <color key="tintColor" red="1" green="0.14901960784313725" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Abmelden">
-                                                        <color key="titleColor" red="1" green="0.14901960784313725" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="128530">
-                                                    <rect key="frame" x="62.5" y="1" width="250" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="250" id="GiZ-Ky-irq"/>
-                                                        <constraint firstAttribute="height" constant="40" id="l69-Su-pd5"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <state key="normal" title="Anmelden">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <real key="value" value="20"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Informationen" id="281592">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="281593">
-                                        <rect key="frame" x="0.0" y="305" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="281593" id="281594">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Über Uns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="284174">
-                                                    <rect key="frame" x="40" y="12" width="184" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="165120" kind="show" id="281641"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Digitale Rechnungen" id="277855">
-                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="277856">
-                                        <rect key="frame" x="0.0" y="405" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="203" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="277856" id="277857">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1146,7 +1067,141 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="32154" headerTitle="Sicherheit">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="32155">
+                                        <rect key="frame" x="0.0" y="303" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="32155" id="32158">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Passwortverwaltung" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32159">
+                                                    <rect key="frame" x="40" y="12" width="245" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="65110" kind="show" id="65156"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Rechliches &amp; Marketing" id="281592">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="281593">
+                                        <rect key="frame" x="0.0" y="403" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="281593" id="281594">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datenschutz annehmen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="284174">
+                                                    <rect key="frame" x="40" y="12" width="184" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue id="409849" destination="103480" kind="show" identifier="DataProtectionSegue"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="408475" accessoryType="disclosureIndicator">
+                                        <rect key="frame" x="0.0" y="447" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="408475" id="408476">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AGB’s annehmen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="408480" key="tableFooterView" fixedFrame="YES">
+                                                    <rect key="frame" x="40" y="12" width="182" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue id="408624" destination="103480" kind="show" identifier="TermsAndConditionSegue"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="408477" accessoryType="disclosureIndicator">
+                                        <rect key="frame" x="0.0" y="491" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="408477" id="408478">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impressum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="408481" key="tableFooterView" fixedFrame="YES">
+                                                    <rect key="frame" x="40" y="13" width="127.5" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue id="408544" destination="103480" kind="show" identifier="ImprintSegue"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="104464">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="104465">
+                                        <rect key="frame" x="0.0" y="591" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="104465" id="104466">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="104463">
+                                                    <rect key="frame" x="62" y="1" width="250" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="tintColor" red="1" green="0.14901960784313725" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Abmelden">
+                                                        <color key="titleColor" red="1" green="0.14901960784313725" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
+                        <!--<label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Über Uns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="408479" key="tableHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>-->
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="128530" key="tableFooterView">
+                            <rect key="frame" x="2" y="663" width="375" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="250" id="GiZ-Ky-irq"/>
+                                <constraint firstAttribute="height" constant="40" id="l69-Su-pd5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <state key="normal" title="Anmelden">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
                     </tableView>
                     <navigationItem key="navigationItem" title="Einstellungen" id="41725">
                         <barButtonItem key="backBarButtonItem" title="Einstellungen" id="274684"/>
@@ -1154,20 +1209,21 @@
                     <connections>
                         <outlet property="ChangePasswordCell" destination="32155" id="name-outlet-32155"/>
                         <outlet property="ChangePasswordLabel" destination="32159" id="name-outlet-32159"/>
-                        <outlet property="EmailLabel" destination="235740" id="name-outlet-235740"/>
-                        <outlet property="LoginButton" destination="128530" id="name-outlet-128530"/>
                         <outlet property="LogoutButton" destination="104463" id="name-outlet-104463"/>
                         <outlet property="LogoutCell" destination="104465" id="name-outlet-104465"/>
-                        <outlet property="PersonalInformationCell" destination="32160" id="name-outlet-32160"/>
                         <outlet property="SettingsTable" destination="32153" id="name-outlet-32153"/>
-                        <outlet property="UsernameLabel" destination="235739" id="name-outlet-235739"/>
                         <segue destination="6298" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="107024"/>
                         <outlet property="EBill" destination="277862" id="name-outlet-277862"/>
+                        <!-- <outlet property="DataProtectionSegue" destination="281594" id="name-outlet-281594"/>-->
+                        <outlet property="EmailLabel" destination="235740" id="name-outlet-235740"/>
+                        <outlet property="PersonalInformationCell" destination="32160" id="name-outlet-32160"/>
+                        <outlet property="UsernameLabel" destination="235739" id="name-outlet-235739"/>
+                        <outlet property="LoginButton" destination="128530" id="name-outlet-128530"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32113" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71.2" y="-1452.324"/>
+            <point key="canvasLocation" x="1423.8" y="-1506.324"/>
         </scene>
         <!--Einstellungen-->
         <scene sceneID="41637">
@@ -1474,7 +1530,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65116" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1181.6" y="-1452.324"/>
+            <point key="canvasLocation" x="2081.6" y="-1464.324"/>
         </scene>
         <!--Forgot Passwort View Controller-->
         <scene sceneID="wp3-ta-dn0">
@@ -1576,7 +1632,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Datenschutz"/>
                                                     <connections>
-                                                        <segue destination="103480" kind="show" identifier="DataProtectionSegue2" id="oLX-ve-ula"/>
+                                                        <segue destination="103480" kind="show" identifier="DataProtectionSegue" id="oLX-ve-ula"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2042,9 +2098,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <connections>
-                                            <segue destination="103480" kind="show" identifier="ImprintSegue" id="165250"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="165131">
                                         <rect key="frame" x="0.0" y="107" width="375" height="44"/>
@@ -2063,9 +2116,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <connections>
-                                            <segue destination="103480" kind="show" identifier="TermsAndConditionSegue" id="165314"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="165133">
                                         <rect key="frame" x="0.0" y="151" width="375" height="44"/>
@@ -2084,9 +2134,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <connections>
-                                            <segue destination="103480" kind="show" identifier="DataProtectionSegue" id="165358"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -3332,7 +3379,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="218532"/>
-        <segue reference="165358"/>
         <segue reference="47466"/>
         <segue reference="47351"/>
         <segue reference="107024"/>
