@@ -1,23 +1,31 @@
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using Foundation;
 using GCloudShared.Repository;
+using GCloudShared.Service;
 using GCloudShared.Shared;
 using MessageUI;
 using Newtonsoft.Json;
+using Refit;
 using UIKit;
+using Xamarin.Essentials;
 
 namespace GCloudiPhone
 {
     public partial class SettingsTableViewController : UITableViewController
     {
         private readonly UserRepository _userRepository = new UserRepository(DbBootstraper.Connection);
+        private readonly IAuthService _authService;
         private readonly LogRepository _logRepository = new LogRepository(DbBootstraper.Connection);
 
         MFMailComposeViewController mailController;
 
         public SettingsTableViewController(IntPtr handle) : base(handle)
-        { }
+        {
+            _userRepository = new UserRepository(DbBootstraper.Connection);
+            _authService = RestService.For<IAuthService>(HttpClientContainer.Instance.HttpClient);
+        }
 
         public override void ViewDidLoad()
         {
@@ -43,7 +51,8 @@ namespace GCloudiPhone
                 ChangePasswordCell.Accessory = UITableViewCellAccessory.None;
                 ChangePasswordLabel.TextColor = UIColor.LightGray;
                 //UsernameLabel.TextColor = UIColor.LightGray;
-
+                InvitationCodeLabel.Text = "Einladungs-Code: N/A";
+                
             }
             else
             {
@@ -57,6 +66,7 @@ namespace GCloudiPhone
                 ChangePasswordCell.UserInteractionEnabled = true;
                 LogoutButton.TouchUpInside += LogoutButton_TouchUpInside;
                 LogoutCell.AddSubview(LogoutButton);
+                InvitationCodeLabel.Text = user.InvitationCode;
             }
         }
 
@@ -129,5 +139,34 @@ namespace GCloudiPhone
             }
             base.PrepareForSegue(segue, sender);
         }
+
+        public async Task ShareInvitationCode()
+        {
+            var user = _userRepository.GetCurrentUser();
+
+
+            string iCode = InvitationCodeLabel.Text;
+            //Unicode charachter for ü
+            char c1 = '\u00FC';
+            string shareBodyText = user.Email + " schickt dir einen Freundes-Code @@" + "@@" + iCode + "@@" + "@@" + "f" + c1 + "r die Anwendung: https://apps.apple.com/ca/app/myschnitzelpunktepass/id1572873813" + "@@" + "@@" +
+                "Bitte diesen Code bei der Registrierung angeben.";
+            shareBodyText = shareBodyText.Replace("@@", System.Environment.NewLine);
+            //shareBodyText = shareBodyText.Replace(iCode, "*" + iCode + "*");
+
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                //Title = "Freundes-Code",
+                //Text = user.Email + " schickt dir einen " + invitationCode + ", f黵 die Anwendung: https://apps.apple.com/ca/app/myschnitzelpunktepass/id1572873813"
+
+                Text = shareBodyText
+            });
+        }
+
+        async partial void ShareInvitationCodeButton_TouchUpInside(UIButton sender)
+        {
+            await ShareInvitationCode();
+        }
+
+
     }
 }

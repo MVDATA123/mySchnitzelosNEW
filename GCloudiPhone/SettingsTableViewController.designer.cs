@@ -32,6 +32,10 @@ namespace GCloudiPhone
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel InvitationCodeLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton LoginButton { get; set; }
 
         [Outlet]
@@ -49,6 +53,14 @@ namespace GCloudiPhone
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView SettingsTable { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ShareInvitationCodeButton { get; set; }
+
+        [Action ("ShareInvitationCodeButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void ShareInvitationCodeButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -70,6 +82,11 @@ namespace GCloudiPhone
             if (EmailLabel != null) {
                 EmailLabel.Dispose ();
                 EmailLabel = null;
+            }
+
+            if (InvitationCodeLabel != null) {
+                InvitationCodeLabel.Dispose ();
+                InvitationCodeLabel = null;
             }
 
             if (LoginButton != null) {
@@ -95,6 +112,11 @@ namespace GCloudiPhone
             if (SettingsTable != null) {
                 SettingsTable.Dispose ();
                 SettingsTable = null;
+            }
+
+            if (ShareInvitationCodeButton != null) {
+                ShareInvitationCodeButton.Dispose ();
+                ShareInvitationCodeButton = null;
             }
         }
     }
