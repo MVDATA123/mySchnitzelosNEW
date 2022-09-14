@@ -26,6 +26,8 @@ namespace GCloudiPhone
         private IDisposable loginHandler;
         private UITapGestureRecognizer tap;
 
+        //NSUserDefaults storevalues = new NSUserDefaults();
+
         public LoginViewController(IntPtr handle) : base(handle)
         {
             tap = new UITapGestureRecognizer(DismissKeyboard);
@@ -46,6 +48,10 @@ namespace GCloudiPhone
             _userRepository = new UserRepository(DbBootstraper.Connection);
             _mobilePhoneRepository = new MobilePhoneRepository(DbBootstraper.Connection);
             logRepository = new LogRepository(DbBootstraper.Connection);
+
+            // storevalues.SetString(PasswordText.Text, "stringvalue");
+            //Prenosimo vrednost passworda na WebShopViewController
+            //CommonClass.value = PasswordText.Text;
         }
 
         public override void ViewWillAppear(bool animated)
@@ -126,7 +132,9 @@ namespace GCloudiPhone
                 {
                     Username = UsernameText.Text,
                     Password = PasswordText.Text,
-                    DeviceId = mobilePhone?.MobilePhoneId,
+                    
+                // storevalues.SetString(PasswordText.Text, "stringvalue");
+                DeviceId = mobilePhone?.MobilePhoneId,
                     FirebaseInstanceId = InstanceId.SharedInstance.Token
                 }).Subscribe(response =>
                 {
@@ -167,6 +175,7 @@ namespace GCloudiPhone
                             NotificationsHelper.Instance.SubscribeAll();
                         });
                     }
+                   
                 }, ex =>
                 {
                     if (ex is ApiException apiException)
@@ -226,6 +235,7 @@ namespace GCloudiPhone
                 }
                 ToggleInputs();
             }
+            CommonClass.value = PasswordText.Text;
         }
 
         private void PersistUser(User user)

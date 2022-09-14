@@ -386,6 +386,7 @@
     <Compile Include="WebShopViewController.designer.cs">
       <DependentUpon>WebShopViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard">
