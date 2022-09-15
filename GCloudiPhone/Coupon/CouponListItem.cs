@@ -2,7 +2,10 @@ using System;
 using System.Globalization;
 using GCloud.Shared.Dto.Domain;
 using GCloudiPhone.Caching;
+using GCloudShared.Repository;
+using GCloudShared.Service;
 using GCloudShared.Shared;
+using Refit;
 using UIKit;
 
 namespace GCloudiPhone
@@ -12,8 +15,13 @@ namespace GCloudiPhone
         public CouponDto Coupon { get; set; }
         private readonly CultureInfo cultureInfo = new CultureInfo("de-AT");
 
+        private readonly UserRepository _userRepository;
+        private readonly IAuthService _authService;
+
         public CouponListItem(IntPtr handle) : base(handle)
         {
+            _userRepository = new UserRepository(DbBootstraper.Connection);
+            _authService = RestService.For<IAuthService>(HttpClientContainer.Instance.HttpClient);
         }
 
         public CouponListItem()
@@ -98,6 +106,10 @@ namespace GCloudiPhone
                 }
             }
 
+            var user = _userRepository.GetCurrentUser();
+            var totalPoints = _authService.GetTotalPointsByUserID(user.UserId).Result;
+            var totalPointsNew = totalPoints.Replace("\"", "");
+
             switch (coupon.CouponType)
             {
                 case CouponTypeDto.Value:
@@ -108,6 +120,23 @@ namespace GCloudiPhone
                     break;
                 case CouponTypeDto.Points:
                     CouponValue.Text = $@"Wert: {(coupon.Value).ToString()}"+" Punkte";
+                    break;
+                case CouponTypeDto.SpecialProductPoints:
+                    if(Convert.ToInt32(totalPointsNew) > coupon.Value )
+                    {
+                        CouponValue.Text = $@"Wert: {(coupon.Value).ToString()}" + " Punkte";
+                    }
+                    else
+                    {
+                        var punkteFehlen = (-1*(Convert.ToInt32(totalPointsNew) - coupon.Value));
+                        CouponValue.Text = $@"{punkteFehlen.ToString()}" + " Punkte fehlen";
+                        //CouponRedeemsLeft.TextColor = UIColor.Red;
+                        CouponValue.TextColor = UIColor.Red;
+                        this.Accessory = UITableViewCellAccessory.None;
+                        this.BackgroundColor = UIColor.LightGray;
+                        UserInteractionEnabled = false;
+                    }
+                   
                     break;
                 default:
                     break;

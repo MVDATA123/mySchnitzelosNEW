@@ -82,6 +82,9 @@ namespace GCloudiPhone
                 case CouponTypeDto.Points:
                     CouponValueLabel.Text = string.Format("Gutscheinwert: {0} Punkte", Coupon.Value.ToString());
                     break;
+                case CouponTypeDto.SpecialProductPoints:
+                    CouponValueLabel.Text = string.Format("Gutscheinwert: {0} Punkte", Coupon.Value.ToString());
+                    break;
             }
 
             LoadQrCodeImage();
