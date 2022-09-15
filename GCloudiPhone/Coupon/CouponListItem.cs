@@ -18,6 +18,8 @@ namespace GCloudiPhone
         private readonly UserRepository _userRepository;
         private readonly IAuthService _authService;
 
+        public bool couponValidation = false;
+
         public CouponListItem(IntPtr handle) : base(handle)
         {
             _userRepository = new UserRepository(DbBootstraper.Connection);
@@ -132,9 +134,9 @@ namespace GCloudiPhone
                         CouponValue.Text = $@"{punkteFehlen.ToString()}" + " Punkte fehlen";
                         //CouponRedeemsLeft.TextColor = UIColor.Red;
                         CouponValue.TextColor = UIColor.Red;
-                        this.Accessory = UITableViewCellAccessory.None;
-                        this.BackgroundColor = UIColor.LightGray;
-                        UserInteractionEnabled = false;
+                        //this.Accessory = UITableViewCellAccessory.None;
+                        //this.BackgroundColor = UIColor.LightGray;
+                        //UserInteractionEnabled = false;
                     }
                    
                     break;
@@ -153,7 +155,17 @@ namespace GCloudiPhone
                 Accessory = UITableViewCellAccessory.None;
             }
 
-            if (!coupon.IsValid)
+       
+            if (Convert.ToInt32(totalPointsNew) > coupon.Value)
+            {
+                couponValidation = false;
+            }
+            else
+            {
+                couponValidation = true;
+            }
+
+            if (!coupon.IsValid || couponValidation)
             {
                 CouponRedeemsLeft.TextColor = UIColor.Red;
                 this.Accessory = UITableViewCellAccessory.None;
