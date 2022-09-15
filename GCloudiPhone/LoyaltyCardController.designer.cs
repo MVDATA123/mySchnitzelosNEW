@@ -48,6 +48,10 @@ namespace GCloudiPhone
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel PointsLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ProfileButton { get; set; }
 
         [Outlet]
@@ -61,6 +65,10 @@ namespace GCloudiPhone
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton StoreButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TotalPointsLabel { get; set; }
 
         [Action ("EBillButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -140,6 +148,11 @@ namespace GCloudiPhone
                 MapButton = null;
             }
 
+            if (PointsLabel != null) {
+                PointsLabel.Dispose ();
+                PointsLabel = null;
+            }
+
             if (ProfileButton != null) {
                 ProfileButton.Dispose ();
                 ProfileButton = null;
@@ -158,6 +171,11 @@ namespace GCloudiPhone
             if (StoreButton != null) {
                 StoreButton.Dispose ();
                 StoreButton = null;
+            }
+
+            if (TotalPointsLabel != null) {
+                TotalPointsLabel.Dispose ();
+                TotalPointsLabel = null;
             }
         }
     }

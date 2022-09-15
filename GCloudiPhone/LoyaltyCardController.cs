@@ -5,7 +5,9 @@ using Foundation;
 using GCloudiPhone.Caching;
 using GCloudiPhone.Helpers;
 using GCloudShared.Repository;
+using GCloudShared.Service;
 using GCloudShared.Shared;
+using Refit;
 using SafariServices;
 using SidebarNavigation;
 using StoreKit;
@@ -25,6 +27,9 @@ namespace GCloudiPhone
         private readonly NSUrl urlOurProducts = new NSUrl("https://myschnitzel.at/apppart/speisekarte-produkte/");
         private readonly NSUrl urlOurMenu = new NSUrl("https://myschnitzel.at/apppart/speisekarten/");
 
+        private readonly UserRepository _userRepository;
+        private readonly IAuthService _authService;
+
 
         protected SidebarController SidebarController
         {
@@ -42,6 +47,9 @@ namespace GCloudiPhone
         {
             menuBarButton = new UIBarButtonItem(UIImage.FromBundle("MenuIcon"), UIBarButtonItemStyle.Plain, (sender, e) => SidebarController.ToggleMenu());
             loginBarButton = new UIBarButtonItem(UIImage.FromBundle("LoginIcon"), UIBarButtonItemStyle.Plain, (sender, e) => TabBarController.PerformSegue("LoginSegue", this));
+
+            _userRepository = new UserRepository(DbBootstraper.Connection);
+            _authService = RestService.For<IAuthService>(HttpClientContainer.Instance.HttpClient);
 
             random = new Random();
 #if DEBUG
@@ -83,6 +91,19 @@ namespace GCloudiPhone
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+
+            var user = _userRepository.GetCurrentUser();
+            var totalPoints = _authService.GetTotalPointsByUserID(user.UserId).Result;
+            var totalPointsNew = totalPoints.Replace("\"", "");
+
+            //var span = totalPointsNew + " Punkte";
+            //var indexOfPunkte = span.IndexOf(" Punkte");
+
+            TotalPointsLabel.Text = totalPointsNew;
+            TotalPointsLabel.TextColor = UIColor.Red;
+
+            PointsLabel.Text = " Punkte";
+            PointsLabel.TextColor = UIColor.Black;
 
             timer.Elapsed += Timer_Elapsed;
 
