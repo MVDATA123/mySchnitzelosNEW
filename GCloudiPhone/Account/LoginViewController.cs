@@ -13,6 +13,7 @@ using Refit;
 using UIKit;
 using Foundation;
 using Firebase.InstanceID;
+using Xamarin.Essentials;
 
 namespace GCloudiPhone
 {
@@ -235,7 +236,9 @@ namespace GCloudiPhone
                 }
                 ToggleInputs();
             }
-            CommonClass.value = PasswordText.Text;
+            //prenosimo na WebShopViewController
+            //CommonClass.value = PasswordText.Text;
+            Preferences.Set("password", PasswordText.Text);
         }
 
         private void PersistUser(User user)

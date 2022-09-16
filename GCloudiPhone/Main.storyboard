@@ -374,16 +374,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="qGZ-8j-Kng" kind="relationship" relationship="viewControllers" id="41508"/>
-                        <segue destination="41950" kind="relationship" relationship="viewControllers" id="49194"/>
-                        <segue destination="6298" kind="presentation" identifier="LoginSegue" id="85618"/>
                         <segue destination="54006" kind="relationship" relationship="viewControllers" id="141377"/>
-                        <segue destination="Fx2-wh-WZG" kind="relationship" relationship="viewControllers" id="280560"/>
-                        <segue destination="41638" kind="relationship" relationship="viewControllers" id="283770"/>
                         <segue id="323680" destination="323676" kind="relationship" relationship="viewControllers"/>
+                        <segue destination="41638" kind="relationship" relationship="viewControllers" id="283770"/>
+                        <segue id="376063" destination="376059" kind="relationship" relationship="viewControllers"/>
+                        <segue destination="6298" kind="presentation" identifier="LoginSegue" id="85618"/>
                         <segue id="328297" destination="328293" kind="relationship" relationship="viewControllers"/>
                         <segue id="358632" destination="358628" kind="relationship" relationship="viewControllers"/>
                         <segue id="366646" destination="366642" kind="relationship" relationship="viewControllers"/>
-                        <segue id="376063" destination="376059" kind="relationship" relationship="viewControllers"/>
                     </connections>
                     <navigationItem title="Title" id="372003" key="navigationItem"/>
                 </tabBarController>
@@ -3357,7 +3355,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="328298"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Speisekarte" id="328295" translatesAutoresizingMaskIntoConstraints="NO" image="eBillIcon" selectedImage="eBillIconFilled"/>
+                    <tabBarItem key="tabBarItem" title="Speisekarte" id="328295" translatesAutoresizingMaskIntoConstraints="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="328296" userLabel="First Responder" sceneMemberID="firstResponder"/>

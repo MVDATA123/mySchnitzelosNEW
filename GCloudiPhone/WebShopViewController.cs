@@ -5,6 +5,7 @@ using GCloudShared.Shared;
 using System;
 using UIKit;
 using WebKit;
+using Xamarin.Essentials;
 
 namespace GCloudiPhone
 {
@@ -36,7 +37,8 @@ namespace GCloudiPhone
             var user = _userRepository.GetCurrentUser();
             var username = user.Username;
             //var password = storevalues.StringForKey("stringvalue");
-            var password = CommonClass.value;
+            //var password = CommonClass.value;
+            var password = Preferences.Get("password", "00000");
 
             string url1 = "https://esterhazystrasse.myschnitzel.at/customer/ValidationExample?email=" + username + "&password=" + password;
             string url2 = "https://fischauergasse.myschnitzel.at/customer/ValidationExample?email=" + username + "&password=" + password;

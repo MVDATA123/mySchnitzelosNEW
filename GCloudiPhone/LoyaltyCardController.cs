@@ -93,17 +93,24 @@ namespace GCloudiPhone
             base.ViewWillAppear(animated);
 
             var user = _userRepository.GetCurrentUser();
-            var totalPoints = _authService.GetTotalPointsByUserID(user.UserId).Result;
-            var totalPointsNew = totalPoints.Replace("\"", "");
+            if (user != null)
+            {
+                var totalPoints = _authService.GetTotalPointsByUserID(user.UserId).Result;
+                var totalPointsNew = totalPoints.Replace("\"", "");
+
+
+                TotalPointsLabel.Text = totalPointsNew;
+                TotalPointsLabel.TextColor = UIColor.Red;
+
+                PointsLabel.Text = " Punkte";
+                PointsLabel.TextColor = UIColor.Black;
+
+            }
+
+
 
             //var span = totalPointsNew + " Punkte";
             //var indexOfPunkte = span.IndexOf(" Punkte");
-
-            TotalPointsLabel.Text = totalPointsNew;
-            TotalPointsLabel.TextColor = UIColor.Red;
-
-            PointsLabel.Text = " Punkte";
-            PointsLabel.TextColor = UIColor.Black;
 
             timer.Elapsed += Timer_Elapsed;
 
@@ -179,10 +186,11 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).ChangeSelectedItem(1);
         }
 
+        //Store list and store details
         partial void MapButton_TouchUpInside(UIButton sender)
         {
             TabBarController.TabBar.Hidden = false;
-            ((TabBarController)TabBarController).ChangeSelectedItem(2);
+            ((TabBarController)TabBarController).ChangeSelectedItem(1);
         }
 
         public override void DidReceiveMemoryWarning()
@@ -191,10 +199,11 @@ namespace GCloudiPhone
             // Release any cached data, images, etc that aren't in use.
         }
 
+        //Settings
         partial void ProfileButton_TouchUpInside(UIButton sender)
         {
             TabBarController.TabBar.Hidden = false;
-            ((TabBarController)TabBarController).ChangeSelectedItem(4);
+            ((TabBarController)TabBarController).ChangeSelectedItem(3);
         }
 
         partial void EBillButton_TouchUpInside(UIButton sender)
@@ -203,6 +212,8 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).ChangeSelectedItem(3);
         }
 
+
+        //OurProducts web view
         partial void OpenOurProducts(UIButton sender)
         {
             // Ako koristimo Safari, gde je back button automatski implementiran:
@@ -210,10 +221,22 @@ namespace GCloudiPhone
 
             TabBarController.TabBar.Hidden = false;
             // Automatski nas prebacuje na webViewSiteController
+            ((TabBarController)TabBarController).ChangeSelectedItem(2);
+        }
+
+        //Speisekarte
+        partial void OpenOurMenu(UIButton sender)
+        {
+            // Ako koristimo Safari, gde je back button automatski implementiran:
+            // UIApplication.SharedApplication.OpenUrl(urlOurMenu);
+
+            TabBarController.TabBar.Hidden = false;
+            // Automatski nas prebacuje na webViewOurProducts
             ((TabBarController)TabBarController).ChangeSelectedItem(5);
         }
 
-        partial void OpenOurMenu(UIButton sender)
+        //Coupons - type 1,2,3
+        partial void OpenAktionenTab(UIButton sender)
         {
             // Ako koristimo Safari, gde je back button automatski implementiran:
             // UIApplication.SharedApplication.OpenUrl(urlOurMenu);
@@ -223,7 +246,8 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).ChangeSelectedItem(6);
         }
 
-        partial void OpenAktionenTab(UIButton sender)
+        //Coupons - type 4
+        partial void OpenSpecialProductsTab(UIButton sender)
         {
             // Ako koristimo Safari, gde je back button automatski implementiran:
             // UIApplication.SharedApplication.OpenUrl(urlOurMenu);
@@ -233,16 +257,8 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).ChangeSelectedItem(7);
         }
 
-        partial void OpenSpecialProductsTab(UIButton sender)
-        {
-            // Ako koristimo Safari, gde je back button automatski implementiran:
-            // UIApplication.SharedApplication.OpenUrl(urlOurMenu);
 
-            TabBarController.TabBar.Hidden = false;
-            // Automatski nas prebacuje na webViewOurProducts
-            ((TabBarController)TabBarController).ChangeSelectedItem(8);
-        }
-
+        //On line shop
         partial void OnlineShop(UIButton sender)
         {
             // Ako koristimo Safari, gde je back button automatski implementiran:
@@ -250,7 +266,7 @@ namespace GCloudiPhone
 
             TabBarController.TabBar.Hidden = false;
             // Automatski nas prebacuje na webViewOurProducts
-            ((TabBarController)TabBarController).ChangeSelectedItem(9);
+            ((TabBarController)TabBarController).ChangeSelectedItem(4);
         }
     }
 }
