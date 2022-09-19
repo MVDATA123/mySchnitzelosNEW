@@ -272,6 +272,21 @@ namespace GCloudiPhone.Caching
             return image;
         }
 
+        //Dodato jer QR kod za Special Products sadrzi podatke o SpecialProductId a ne o CouponID
+        //kao sto sadrzi qr kod za obicne Coupons
+        public static UIImage GetSpecialProductsCouponQrCode(CouponDto coupon)
+        {
+            var image = CacheHolder.Instance.CouponQrCodes.FirstOrDefault(i => i.Guid.Equals(coupon.Id.ToString()))?.Image;
+            if (image == null)
+            {
+                var userRedeem = new { UserId = userRepository.GetCurrentUser().UserId, SpecialProductId = coupon.Id.ToString() };
+                //image = QrCodeUtils.GetQrCode(JsonConvert.SerializeObject(userRedeem));
+                image = JsonConvert.SerializeObject(userRedeem).GenerateQrCode();
+                CacheHolder.Instance.CouponQrCodes.Add(new ImageHelper { Guid = coupon.Id.ToString(), Image = image });
+            }
+            return image;
+        }
+
         public static UIImage GetLoyaltyCard()
         {
             if (CacheHolder.Instance.LoyaltyCard == null)

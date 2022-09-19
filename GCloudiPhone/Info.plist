@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>mySchnitzel Punktepass</string>
+	<string>mySchnitzel</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.4</string>
+	<string>1.5</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.4</string>
+	<string>1.0.5</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
@@ -61,14 +61,14 @@
 		<string>remote-notification</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>at.mv-data.foodjet.mobile.myschnitzel</string>
+	<string>at.mv-data.jetstore.mobile.myschnitzel</string>
 	<key>CFBundleName</key>
-	<string>mySchnitzel Punktepass</string>
+	<string>mySchnitzel</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 	<key>CFBundleDevelopmentRegion</key>
-    	<string>de</string>
-    	<key>CFBundleLocalizations</key>
-        <string>de</string>
+	<string>de</string>
+	<key>CFBundleLocalizations</key>
+	<string>de</string>
 </dict>
 </plist>

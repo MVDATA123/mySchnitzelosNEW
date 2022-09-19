@@ -137,7 +137,15 @@ namespace GCloudiPhone
 
         public void LoadQrCodeImage()
         {
-            CouponQrCode.Image = Caching.CachingService.GetCouponQrCode(Coupon);
+            if (coupon.CouponType == CouponTypeDto.SpecialProductPoints)
+            {
+                CouponQrCode.Image = Caching.CachingService.GetSpecialProductsCouponQrCode(Coupon);
+            }
+            else
+            {
+                CouponQrCode.Image = Caching.CachingService.GetCouponQrCode(Coupon);
+            }
+            
         }
 
         public void LoadCouponImage()
