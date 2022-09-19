@@ -11,11 +11,19 @@ using UIKit;
 
 namespace GCloudiPhone
 {
-    [Register ("SpecialProductsController")]
-    partial class SpecialProductsController
+    [Register ("ActionNavigationController")]
+    partial class ActionNavigationController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITabBarItem Aktionen { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (Aktionen != null) {
+                Aktionen.Dispose ();
+                Aktionen = null;
+            }
         }
     }
 }

@@ -11,11 +11,8 @@ using UIKit;
 
 namespace GCloudiPhone
 {
-    [Register ("SpecialProductsController")]
-    partial class SpecialProductsController
+    [Register ("SimpleCouponeNavigationController")]
+    partial class SimpleCouponeNavigationController
     {
-        void ReleaseDesignerOutlets ()
-        {
-        }
     }
 }

@@ -377,11 +377,11 @@
                         <segue destination="54006" kind="relationship" relationship="viewControllers" id="141377"/>
                         <segue id="323680" destination="323676" kind="relationship" relationship="viewControllers"/>
                         <segue destination="41638" kind="relationship" relationship="viewControllers" id="283770"/>
-                        <segue id="376063" destination="376059" kind="relationship" relationship="viewControllers"/>
                         <segue destination="6298" kind="presentation" identifier="LoginSegue" id="85618"/>
                         <segue id="328297" destination="328293" kind="relationship" relationship="viewControllers"/>
-                        <segue id="358632" destination="358628" kind="relationship" relationship="viewControllers"/>
-                        <segue id="366646" destination="366642" kind="relationship" relationship="viewControllers"/>
+                        <segue id="428502" destination="428241" kind="relationship" relationship="viewControllers"/>
+                        <segue id="438903" destination="438685" kind="relationship" relationship="viewControllers"/>
+                        <segue id="441018" destination="440732" kind="relationship" relationship="viewControllers"/>
                     </connections>
                     <navigationItem title="Title" id="372003" key="navigationItem"/>
                 </tabBarController>
@@ -659,7 +659,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="496" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71" y="972"/>
+            <point key="canvasLocation" x="-62" y="1026"/>
         </scene>
         <!--Login Navigation Controller-->
         <scene sceneID="6297">
@@ -3389,7 +3389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="358631" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540" y="524"/>
+            <point key="canvasLocation" x="791" y="1108"/>
         </scene>
         <scene sceneID="366641">
             <objects>
@@ -3400,15 +3400,26 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="366647"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="367800" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="46" y="180" width="164" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="367800" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="88" y="202" width="164" height="68"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue id="367893" destination="44412" kind="show"/>
-                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="427046" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="149" y="88" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <constraints>
+                            <constraint id="427047" firstItem="427046" firstAttribute="height" secondItem="366647" secondAttribute="height"/>
+                            <constraint id="427048" firstItem="427046" firstAttribute="leading" secondItem="366647" secondAttribute="leading" constant="149"/>
+                            <constraint id="427049" firstItem="427046" firstAttribute="top" secondItem="366643" secondAttribute="top" constant="88"/>
+                            <constraint id="427050" firstItem="427046" firstAttribute="width" secondItem="366647" secondAttribute="width"/>
+                            <constraint id="427052" firstItem="367800" firstAttribute="top" secondItem="427046" secondAttribute="bottom" constant="93"/>
+                            <constraint id="427053" firstItem="367800" firstAttribute="leading" secondItem="366647" secondAttribute="leading" constant="88"/>
+                            <constraint id="427054" firstItem="367800" firstAttribute="height" secondItem="366647" secondAttribute="height"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Punkte einlösen" id="366644" translatesAutoresizingMaskIntoConstraints="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -3455,7 +3466,138 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="386587" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="387" y="972"/>
+            <point key="canvasLocation" x="385" y="1044"/>
+        </scene>
+        <scene sceneID="428240">
+            <objects>
+                <navigationController id="428241" sceneMemberID="viewController" customClass="ActionNavigationController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="428243">
+                        <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <tabBarItem key="tabBarItem" title="Aktionen" id="428501"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="Aktionen" destination="428501" id="name-outlet-428501"/>
+                        <segue id="434516" destination="434419" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="428244" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-596" y="660"/>
+        </scene>
+        <scene sceneID="434418">
+            <objects>
+                <tableViewController id="434419" customClass="ActionCouponListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="434421">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CouponRow" editingAccessoryType="disclosureIndicator" rowHeight="75" id="434427" customClass="CouponListItem">
+                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="434427" id="434440">
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="75"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="434429">
+                                            <rect key="frame" x="10" y="12" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gutschein" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="434433">
+                                            <rect key="frame" x="75" y="5" width="265" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wert: 5,00 €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="434437">
+                                            <rect key="frame" x="75" y="49" width="151" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999x" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="434431">
+                                            <rect key="frame" x="232" y="49" width="105" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" white="0.66666666666666696" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="noch 2 Tage gültig!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="434435">
+                                            <rect key="frame" x="75" y="26" width="265" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="75" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="CouponImage" destination="434429" id="434428"/>
+                                    <outlet property="CouponRedeemsLeft" destination="434431" id="434430"/>
+                                    <outlet property="CouponTitle" destination="434433" id="434432"/>
+                                    <outlet property="CouponValidUntil" destination="434435" id="434434"/>
+                                    <outlet property="CouponValue" destination="434437" id="434436"/>
+                                    <segue id="436856" destination="8Nm-gK-NfG" kind="show" identifier="CouponDetailsSegue"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="434419" id="434425"/>
+                            <outlet property="delegate" destination="434419" id="434426"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Gutscheine" id="434424"/>
+                    <connections>
+                        <outlet property="CouponListNew" destination="434421" id="name-outlet-434421"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="434441" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="728"/>
+        </scene>
+        <scene sceneID="438684">
+            <objects>
+                <navigationController id="438685" sceneMemberID="viewController" customClass="SimpleCouponeNavigationController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="438687">
+                        <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="438789" destination="44412" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                    <tabBarItem key="tabBarItem" title="Punkte einlösen" id="438902"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="438688" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-580" y="-78"/>
+        </scene>
+        <scene sceneID="440731">
+            <objects>
+                <navigationController id="440732" sceneMemberID="viewController" customClass="OnlineShopNavigationController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="440734">
+                        <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="440792" destination="490" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                    <tabBarItem key="tabBarItem" title="Online bestellen" id="441017"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="440735" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1600" y="1664"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

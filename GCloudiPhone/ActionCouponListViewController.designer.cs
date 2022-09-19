@@ -11,11 +11,19 @@ using UIKit;
 
 namespace GCloudiPhone
 {
-    [Register ("SpecialProductsController")]
-    partial class SpecialProductsController
+    [Register ("ActionCouponListViewController")]
+    partial class ActionCouponListViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView CouponListNew { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (CouponListNew != null) {
+                CouponListNew.Dispose ();
+                CouponListNew = null;
+            }
         }
     }
 }

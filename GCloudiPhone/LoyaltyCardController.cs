@@ -232,7 +232,7 @@ namespace GCloudiPhone
 
             TabBarController.TabBar.Hidden = false;
             // Automatski nas prebacuje na webViewOurProducts
-            ((TabBarController)TabBarController).ChangeSelectedItem(5);
+            ((TabBarController)TabBarController).ChangeSelectedItem(4);
         }
 
         //Coupons - type 1,2,3
@@ -243,7 +243,7 @@ namespace GCloudiPhone
 
             TabBarController.TabBar.Hidden = false;
             // Automatski nas prebacuje na webViewOurProducts
-            ((TabBarController)TabBarController).ChangeSelectedItem(6);
+            ((TabBarController)TabBarController).ChangeSelectedItem(5);
         }
 
         //Coupons - type 4
@@ -254,7 +254,7 @@ namespace GCloudiPhone
 
             TabBarController.TabBar.Hidden = false;
             // Automatski nas prebacuje na webViewOurProducts
-            ((TabBarController)TabBarController).ChangeSelectedItem(7);
+            ((TabBarController)TabBarController).ChangeSelectedItem(6);
         }
 
 
@@ -266,7 +266,8 @@ namespace GCloudiPhone
 
             TabBarController.TabBar.Hidden = false;
             // Automatski nas prebacuje na webViewOurProducts
-            ((TabBarController)TabBarController).ChangeSelectedItem(4);
+            ((TabBarController)TabBarController).ChangeSelectedItem(7
+                );
         }
     }
 }

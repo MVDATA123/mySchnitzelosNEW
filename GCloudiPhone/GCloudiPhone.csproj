@@ -387,6 +387,22 @@
       <DependentUpon>WebShopViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonClass.cs" />
+    <Compile Include="ActionNavigationController.cs" />
+    <Compile Include="ActionNavigationController.designer.cs">
+      <DependentUpon>ActionNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionCouponListViewController.cs" />
+    <Compile Include="ActionCouponListViewController.designer.cs">
+      <DependentUpon>ActionCouponListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleCouponeNavigationController.cs" />
+    <Compile Include="SimpleCouponeNavigationController.designer.cs">
+      <DependentUpon>SimpleCouponeNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineShopNavigationController.cs" />
+    <Compile Include="OnlineShopNavigationController.designer.cs">
+      <DependentUpon>OnlineShopNavigationController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard">
