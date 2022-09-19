@@ -53,8 +53,6 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>XSAppIconAssets</key>
-	<string>Resources/Images.xcassets/AppIcon-old.appiconset</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -70,5 +68,7 @@
 	<string>de</string>
 	<key>CFBundleLocalizations</key>
 	<string>de</string>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Images.xcassets/AppIcon-old.appiconset</string>
 </dict>
 </plist>
