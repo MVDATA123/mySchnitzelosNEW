@@ -836,6 +836,22 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-83.5x83.5%402x-1.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\foodjet.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcon-1.appiconset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\Aktionen.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\Produkte.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\OnlineBestellen.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\Speisekarte.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\PunkteEinlosen.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\Standorte.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\WelcommeMessage.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\WelcommeMessage.imageset\mainHeader.png" />
+    <ImageAsset Include="Images.xcassets\Standorte.imageset\icons8_marker3.png" />
+    <ImageAsset Include="Images.xcassets\PunkteEinlosen.imageset\ebill_logo.png" />
+    <ImageAsset Include="Images.xcassets\Speisekarte.imageset\speisekarte.png" />
+    <ImageAsset Include="Images.xcassets\OnlineBestellen.imageset\ebill_logo_outlined.png" />
+    <ImageAsset Include="Images.xcassets\Produkte.imageset\icons8_shop2.png" />
+    <ImageAsset Include="Images.xcassets\Aktionen.imageset\medal.png" />
+    <ImageAsset Include="Images.xcassets\SettingsNew.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\SettingsNew.imageset\sett.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GCloud.Shared\GCloud.Shared.csproj">
@@ -966,6 +982,14 @@
     <Folder Include="Resources\Images.xcassets\ProfileIconTall.imageset\" />
     <Folder Include="Resources\Images.xcassets\ReportIconColored.imageset\" />
     <Folder Include="Resources\Images.xcassets\SettingsIconFilled.imageset\" />
+    <Folder Include="Images.xcassets\Aktionen.imageset\" />
+    <Folder Include="Images.xcassets\Produkte.imageset\" />
+    <Folder Include="Images.xcassets\OnlineBestellen.imageset\" />
+    <Folder Include="Images.xcassets\Speisekarte.imageset\" />
+    <Folder Include="Images.xcassets\PunkteEinlosen.imageset\" />
+    <Folder Include="Images.xcassets\Standorte.imageset\" />
+    <Folder Include="Images.xcassets\WelcommeMessage.imageset\" />
+    <Folder Include="Images.xcassets\SettingsNew.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

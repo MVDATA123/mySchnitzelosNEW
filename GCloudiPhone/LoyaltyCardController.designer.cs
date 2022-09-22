@@ -16,19 +16,7 @@ namespace GCloudiPhone
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton Aktionen { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView BackgroundImage { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView BackgroundView { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton eBillButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -60,19 +48,11 @@ namespace GCloudiPhone
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton SpecialProducts { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton StoreButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel TotalPointsLabel { get; set; }
 
-        [Action ("EBillButton_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void EBillButton_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UIImageView WelcommeMessage { get; set; }
 
         [Action ("MapButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -102,30 +82,11 @@ namespace GCloudiPhone
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void ProfileButton_TouchUpInside (UIKit.UIButton sender);
 
-        [Action ("StoreButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void StoreButton_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
-            if (Aktionen != null) {
-                Aktionen.Dispose ();
-                Aktionen = null;
-            }
-
-            if (BackgroundImage != null) {
-                BackgroundImage.Dispose ();
-                BackgroundImage = null;
-            }
-
             if (BackgroundView != null) {
                 BackgroundView.Dispose ();
                 BackgroundView = null;
-            }
-
-            if (eBillButton != null) {
-                eBillButton.Dispose ();
-                eBillButton = null;
             }
 
             if (LoginButton != null) {
@@ -163,19 +124,14 @@ namespace GCloudiPhone
                 ShadowView = null;
             }
 
-            if (SpecialProducts != null) {
-                SpecialProducts.Dispose ();
-                SpecialProducts = null;
-            }
-
-            if (StoreButton != null) {
-                StoreButton.Dispose ();
-                StoreButton = null;
-            }
-
             if (TotalPointsLabel != null) {
                 TotalPointsLabel.Dispose ();
                 TotalPointsLabel = null;
+            }
+
+            if (WelcommeMessage != null) {
+                WelcommeMessage.Dispose ();
+                WelcommeMessage = null;
             }
         }
     }

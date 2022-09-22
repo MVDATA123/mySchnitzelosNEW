@@ -69,7 +69,7 @@ namespace GCloudiPhone
         {
             InvokeOnMainThread(() =>
             {
-                BackgroundImage.Image = CacheHolder.Instance.NextImage();
+               // BackgroundImage.Image = CacheHolder.Instance.NextImage();
             });
         }
 
@@ -86,6 +86,12 @@ namespace GCloudiPhone
             ShadowView.Layer.ShadowOffset = new CGSize(5.0d, 5.0d);
             ShadowView.Layer.ShadowRadius = 5.0f;
             ShadowView.Layer.ShadowOpacity = 0.7f;
+
+            //Menjamo boju pozadine i navigation item
+            View.BackgroundColor = UIColor.FromRGB(255, 205, 103);
+            //UINavigationBar.Appearance.BackgroundColor = UIColor.FromRGB(255, 205, 103);
+            //NavigationItem.Title = "";
+            this.NavigationController.SetNavigationBarHidden(true, true);
         }
 
         public override void ViewWillAppear(bool animated)
@@ -117,7 +123,7 @@ namespace GCloudiPhone
             InvokeInBackground(() =>
             {
                 var backgroundImage = CacheHolder.Instance.NextImage();
-                InvokeOnMainThread(() => BackgroundImage.Image = backgroundImage);
+               // InvokeOnMainThread(() => BackgroundImage.Image = backgroundImage);
             });
 
             timer.Start();
@@ -125,12 +131,16 @@ namespace GCloudiPhone
             if (((AppDelegate)UIApplication.SharedApplication.Delegate).AuthState == AuthState.Unauthorized)
             {
                 NavigationItem.LeftBarButtonItem = null;
-                View.Add(LoginMessageLabel);
+                //Necemo da se prikazuje labela koje se odnosi na poruku da se treba ulogovati
+                //View.Add(LoginMessageLabel);
                 View.Add(LoginButton);
                 //NavigationItem.RightBarButtonItem = loginBarButton; // login dugme vec postoji, tako da je za sada izbaceno ovo bar button dugme
                 LoyaltyCardImage.Image = UIImage.FromBundle("Logo");
 
                 ShadowView.Hidden = true;
+
+                TotalPointsLabel.Hidden = true;
+                PointsLabel.Hidden = true;
             }
             else
             {
@@ -180,11 +190,11 @@ namespace GCloudiPhone
             InvokeOnMainThread(() => LoyaltyCardImage.Image = loyaltyCard);
         }
 
-        partial void StoreButton_TouchUpInside(UIButton sender)
-        {
-            TabBarController.TabBar.Hidden = false;
-            ((TabBarController)TabBarController).ChangeSelectedItem(1);
-        }
+        //partial void StoreButton_TouchUpInside(UIButton sender)
+        //{
+        //    TabBarController.TabBar.Hidden = false;
+        //    ((TabBarController)TabBarController).ChangeSelectedItem(1);
+        //}
 
         //Store list and store details
         partial void MapButton_TouchUpInside(UIButton sender)
@@ -206,11 +216,11 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).ChangeSelectedItem(3);
         }
 
-        partial void EBillButton_TouchUpInside(UIButton sender)
-        {
-            TabBarController.TabBar.Hidden = false;
-            ((TabBarController)TabBarController).ChangeSelectedItem(3);
-        }
+        //partial void EBillButton_TouchUpInside(UIButton sender)
+        //{
+        //    TabBarController.TabBar.Hidden = false;
+        //    ((TabBarController)TabBarController).ChangeSelectedItem(3);
+        //}
 
 
         //OurProducts web view
@@ -269,5 +279,7 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).ChangeSelectedItem(7
                 );
         }
+
+      
     }
 }
