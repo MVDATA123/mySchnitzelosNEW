@@ -77,15 +77,15 @@ namespace GCloudiPhone
         {
             base.ViewDidLoad();
 
-            LoginMessageLabel.RemoveFromSuperview();
+            //LoginMessageLabel.RemoveFromSuperview();
             LoginButton.RemoveFromSuperview();
             NavigationItem.RightBarButtonItem = null;
             NavigationItem.LeftBarButtonItem = null;
 
-            ShadowView.Layer.ShadowColor = UIColor.Black.CGColor;
-            ShadowView.Layer.ShadowOffset = new CGSize(5.0d, 5.0d);
-            ShadowView.Layer.ShadowRadius = 5.0f;
-            ShadowView.Layer.ShadowOpacity = 0.7f;
+            //ShadowView.Layer.ShadowColor = UIColor.Black.CGColor;
+            //ShadowView.Layer.ShadowOffset = new CGSize(5.0d, 5.0d);
+            //ShadowView.Layer.ShadowRadius = 5.0f;
+            //ShadowView.Layer.ShadowOpacity = 0.7f;
 
             //Menjamo boju pozadine i navigation item
             View.BackgroundColor = UIColor.FromRGB(255, 205, 103);
@@ -137,14 +137,14 @@ namespace GCloudiPhone
                 //NavigationItem.RightBarButtonItem = loginBarButton; // login dugme vec postoji, tako da je za sada izbaceno ovo bar button dugme
                 LoyaltyCardImage.Image = UIImage.FromBundle("Logo");
 
-                ShadowView.Hidden = true;
+                //ShadowView.Hidden = true;
 
                 TotalPointsLabel.Hidden = true;
                 PointsLabel.Hidden = true;
             }
             else
             {
-                ShadowView.Hidden = false;
+                //ShadowView.Hidden = false;
 
                 // TODO: Uncomment this!
                 //if (new UserRepository(DbBootstraper.Connection).GetCurrentUser().RoleName.Equals("Managers"))
@@ -171,7 +171,7 @@ namespace GCloudiPhone
 
         public override void ViewDidDisappear(bool animated)
         {
-            LoginMessageLabel.RemoveFromSuperview();
+            //LoginMessageLabel.RemoveFromSuperview();
             LoginButton.RemoveFromSuperview();
             NavigationItem.RightBarButtonItem = null;
             NavigationItem.LeftBarButtonItem = null;

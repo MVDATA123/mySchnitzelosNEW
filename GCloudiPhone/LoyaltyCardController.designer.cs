@@ -16,15 +16,7 @@ namespace GCloudiPhone
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView BackgroundView { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton LoginButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel LoginMessageLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -41,10 +33,6 @@ namespace GCloudiPhone
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ProfileButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView ShadowView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -84,19 +72,9 @@ namespace GCloudiPhone
 
         void ReleaseDesignerOutlets ()
         {
-            if (BackgroundView != null) {
-                BackgroundView.Dispose ();
-                BackgroundView = null;
-            }
-
             if (LoginButton != null) {
                 LoginButton.Dispose ();
                 LoginButton = null;
-            }
-
-            if (LoginMessageLabel != null) {
-                LoginMessageLabel.Dispose ();
-                LoginMessageLabel = null;
             }
 
             if (LoyaltyCardImage != null) {
@@ -117,11 +95,6 @@ namespace GCloudiPhone
             if (ProfileButton != null) {
                 ProfileButton.Dispose ();
                 ProfileButton = null;
-            }
-
-            if (ShadowView != null) {
-                ShadowView.Dispose ();
-                ShadowView = null;
             }
 
             if (TotalPointsLabel != null) {
